@@ -3,10 +3,9 @@ package fergoman123.mods.msb.init;
 import fergoman123.mods.msb.block.*;
 import fergoman123.mods.msb.item.ItemBlockDye;
 import fergoman123.mods.msb.item.ItemBlockGoldApple;
-import fergoman123.mods.msb.reference.Names;
+import fergoman123.mods.msb.reference.Names.Blocks;
 
 import static fergoman123.mods.fergoutil.helper.RegisterHelper.registerBlock;
-import fergoman123.mods.msb.reference.Names.Blocks;
 
 
 public class ModBlocks
@@ -32,6 +31,7 @@ public class ModBlocks
     public static final BlockMSB blockLead = new BlockLead();
     public static final BlockMSB blockLeather = new BlockLeather();
     public static final BlockMSB blockBucket = new BlockBucket();
+    public static final BlockMSB blockStick = new BlockStick();
 
     public static void init()
     {

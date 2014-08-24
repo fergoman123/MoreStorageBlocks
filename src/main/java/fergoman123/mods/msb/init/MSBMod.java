@@ -21,6 +21,7 @@ public class MSBMod
     public static void load(FMLInitializationEvent evt)
     {
         ModBlocks.init();
+        Recipes.init();
     }
 
     public static void modsLoaded(FMLPostInitializationEvent evt)
