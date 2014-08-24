@@ -17,12 +17,16 @@ public abstract class BlockMSB extends Block
     {
         super(material);
         this.setCreativeTab(Tabs.tabMSB);
+        this.setHardness(2.5f);
+        this.setResistance(50f);
     }
 
     public BlockMSB()
     {
         this(Material.iron);
         this.setCreativeTab(Tabs.tabMSB);
+        this.setHardness(2.5f);
+        this.setResistance(50f);
     }
 
     public String getUnlocalizedName()

@@ -21,8 +21,14 @@ public class Names
         public static final String blockDyeName = "blockDye";
         public static final String[] blockDye = {"blockInkSack", "blockRoseRed", "blockCactusGreen", "blockCocoa", "blockBlueDye", "blockPurpleDye", "blockCyanDye", "blockSilverDye", "blockGrayDye", "blockPinkDye", "blockLimeDye", "blockYellowDye", "blockLightBlueDye", "blockMagentaDye", "blockOrangeDye", "blockWhiteDye"};
         public static final String blockFireball = "blockFireball";
-
-
+        public static final String blockSlimeball = "blockSlimeball";
+        public static final String blockRottenFlesh = "blockRottenFlesh";
+        public static final String blockPotato = "blockPotato";
+        public static final String blockNetherWart = "blockNetherWart";
+        public static final String blockGunpowder = "blockGunpowder";
+        public static final String blockCarrot = "blockCarrot";
+        public static final String blockArrow = "blockArrow";
+        public static final String blockBlazeRod = "blockBlazeRod";
     }
 
     public static final class Locale
