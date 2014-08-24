@@ -14,7 +14,7 @@ public class ModBlocks
     public static final BlockMSB blockDye = new BlockDye();
     public static final BlockMSB blockBook = new BlockBook();
     public static final BlockMSB blockEgg = new BlockEgg();
-//    public static final BlockMSB blockEnderPearl = new BlockEnderPearl();
+    public static final BlockMSB blockEnderPearl = new BlockEnderPearl();
 //    public static final BlockMSB blockEnderEye = new BlockEnderEye();
 //    public static final BlockMSB blockLead = new BlockLead();
 //    public static final BlockMSB blockSeeds = new BlockSeeds();

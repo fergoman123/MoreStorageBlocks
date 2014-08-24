@@ -6,10 +6,10 @@ import fergoman123.mods.fergoutil.helper.NameHelper;
 import fergoman123.mods.msb.reference.Names;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.Random;
@@ -29,6 +29,17 @@ public class BlockGoldApple extends BlockMSB
 
     @Override
     public Item getItemDropped(int par1, Random par2, int par3)
+    {
+        return Item.getItemFromBlock(this);
+    }
+
+    @Override
+    public int damageDropped(int metadata)
+    {
+        return metadata;
+    }
+
+    public Item getItem(World world, int x, int y, int z)
     {
         return Item.getItemFromBlock(this);
     }
@@ -60,23 +71,6 @@ public class BlockGoldApple extends BlockMSB
     public IIcon getIcon(int side, int metadata)
     {
 
-        if (metadata == 1)
-        {
-            return icons[1];
-        }
-        else
-        {
-            return icons[0];
-        }
-    }
-
-    public EnumRarity getRarity(ItemStack stack)
-    {
-        if (stack.getItemDamage() == 0)
-            return EnumRarity.rare;
-        if (stack.getItemDamage() == 1)
-            return EnumRarity.epic;
-        else
-            return EnumRarity.common;
+        return this.icons[metadata];
     }
 }

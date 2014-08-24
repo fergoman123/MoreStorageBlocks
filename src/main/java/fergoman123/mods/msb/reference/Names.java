@@ -7,7 +7,7 @@ public class Names
         public static final String blockCharcoal = "blockCharcoal";
         public static final String blockApple = "blockApple";
         public static final String blockGoldAppleName = "blockGA";
-        public static final String[] blockGoldApple = {"blockGoldApple1", "blockGoldApple2"};
+        public static final String[] blockGoldApple = {"blockGoldApple", "blockNotchApple"};
         public static final String blockBook = "blockBook";
         public static final String blockEgg = "blockEgg";
         public static final String blockEnderPearl = "blockEnderPearl";
@@ -19,7 +19,7 @@ public class Names
         public static final String blockLeather = "blockLeather";
         public static final String blockBucket = "blockBucket";
         public static final String blockDyeName = "blockDye";
-        public static final String[] blockDye = {"blockInkSack", "blockRoseRed", "blockCactusGreen", "blockCocoa", "blockBlueDye", "blockPurpleDye", "blockCyanDye", "blockSilverDye", "blockGrayDye", "blockPinkDye", "blockLimeDye", "blockYellowDye", "blockLigheBlueDye", "blockMegentaDye", "blockOrangeDye", "blockWhiteDye"};
+        public static final String[] blockDye = {"blockInkSack", "blockRoseRed", "blockCactusGreen", "blockCocoa", "blockBlueDye", "blockPurpleDye", "blockCyanDye", "blockSilverDye", "blockGrayDye", "blockPinkDye", "blockLimeDye", "blockYellowDye", "blockLightBlueDye", "blockMagentaDye", "blockOrangeDye", "blockWhiteDye"};
         public static final String blockFireball = "blockFireball";
 
 
@@ -27,6 +27,7 @@ public class Names
 
     public static final class Locale
     {
-        public static final String tabMSB = "MSB:tabMSB";
+        public static final String tabMSB = "tabMSB";
+        public static final String tabMSBTranslated = Reference.textureLoc + tabMSB;
     }
 }
