@@ -2,8 +2,8 @@ MSB:tabMSB=More Storage Blocks
 
 tile.MSB:blockApple.name=Block of Apple
 tile.MSB:blockCharcoal.name=Block of Charcoal
-tile.MSB:blockGA.blockGoldApple.name=Block of Golden Apple
-tile.MSB:blockGA.blockNotchApple.name=Block of Golden Apple (Notch Apple)
+tile.MSB:blockGA.blockGoldApple1.name=Block of Golden Apple
+tile.MSB:blockGA.blockGoldApple2.name=Block of Golden Apple (Notch Apple)
 tile.MSB:blockDye.blockBlueDye.name=Block of Blue Dye
 tile.MSB:blockDye.blockCactusGreen.name=Block of Green Dye
 tile.MSB:blockDye.blockCocoa.name=Block of Cocoa
@@ -25,3 +25,4 @@ tile.MSB:blockEnderEye.name=Block of Ender Eye
 tile.MSB:blockEnderPearl.name=Block of Ender Pearl
 tile.MSB:blockFireball.name=Block of Fireball
 tile.MSB:blockReed.name=Block of Reed
+tile.MSB:blockBook.name=Block of Book

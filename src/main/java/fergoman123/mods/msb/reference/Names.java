@@ -7,7 +7,7 @@ public class Names
         public static final String blockCharcoal = "blockCharcoal";
         public static final String blockApple = "blockApple";
         public static final String blockGoldAppleName = "blockGA";
-        public static final String[] blockGoldApple = {"blockGoldApple", "blockNotchApple"};
+        public static final String[] blockGoldApple = {"blockGoldApple1", "blockGoldApple2"};
         public static final String blockBook = "blockBook";
         public static final String blockEgg = "blockEgg";
         public static final String blockEnderPearl = "blockEnderPearl";
