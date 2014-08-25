@@ -7,7 +7,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemMultiTexture;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockGoldApple extends ItemMultiTexture
+public class ItemBlockGoldApple extends ItemBlockMSB
 {
 
     public ItemBlockGoldApple(Block block)
