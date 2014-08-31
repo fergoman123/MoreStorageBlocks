@@ -24,9 +24,6 @@ public abstract class BlockMSB extends Block
     public BlockMSB()
     {
         this(Material.iron);
-        this.setCreativeTab(Tabs.tabMSB);
-        this.setHardness(2.5f);
-        this.setResistance(50f);
     }
 
     public String getUnlocalizedName()
@@ -38,6 +35,4 @@ public abstract class BlockMSB extends Block
     {
         blockIcon = register.registerIcon(String.format("%s", NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
     }
-
-    public abstract Item getItemDropped(int par1, Random random, int par3);
 }

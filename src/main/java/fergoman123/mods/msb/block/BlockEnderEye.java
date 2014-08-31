@@ -1,11 +1,12 @@
 package fergoman123.mods.msb.block;
 
 import fergoman123.mods.msb.reference.Names;
+import fergoman123.mods.msb.util.IBlockMSB;
 import net.minecraft.item.Item;
 
 import java.util.Random;
 
-public class BlockEnderEye extends BlockMSB
+public class BlockEnderEye extends BlockMSB implements IBlockMSB
 {
     public BlockEnderEye() {
         super();

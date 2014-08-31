@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fergoman123.mods.fergoutil.helper.NameHelper;
 import fergoman123.mods.msb.reference.Names;
+import fergoman123.mods.msb.util.IBlockMSB;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -15,7 +16,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.Random;
 
-public class BlockDye extends BlockMSB
+public class BlockDye extends BlockMSB implements IBlockMSB
 {
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
@@ -31,6 +32,11 @@ public class BlockDye extends BlockMSB
     public Item getItemDropped(int par1, Random rand, int par3)
     {
         return Item.getItemFromBlock(this);
+    }
+
+    public int damageDropped(int metadata)
+    {
+        return metadata;
     }
 
     @Override

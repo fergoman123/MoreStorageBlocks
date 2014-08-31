@@ -7,22 +7,12 @@
   * http://www.gnu.org/licenses/gpl-3.0.html
   */
 
-package fergoman123.mods.msb.block;
+package fergoman123.mods.msb.util;
 
-import fergoman123.mods.msb.reference.Names;
 import net.minecraft.item.Item;
-
 import java.util.Random;
 
-public class BlockStick extends BlockMSB {
-
-    public BlockStick() {
-        super();
-        this.setBlockName(Names.Blocks.blockStick);
-    }
-
-    @Override
-    public Item getItemDropped(int par1, Random random, int par3) {
-        return Item.getItemFromBlock(this);
-    }
+public interface IBlockMSB
+{
+    Item getItemDropped(int par1, Random rand, int par3);
 }
