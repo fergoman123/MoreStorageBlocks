@@ -9,13 +9,12 @@
 
 package fergoman123.mods.msb.block;
 
-import fergoman123.mods.msb.reference.Names;
-import fergoman123.mods.msb.util.IBlockMSB;
-import net.minecraft.item.Item;
+ import fergoman123.mods.msb.reference.Names;
+ import net.minecraft.item.Item;
 
-import java.util.Random;
+ import java.util.Random;
 
-public class BlockSeeds extends BlockMSB implements IBlockMSB
+public class BlockSeeds extends BlockMSB
 {
     public BlockSeeds()
     {

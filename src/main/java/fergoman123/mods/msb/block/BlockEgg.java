@@ -1,7 +1,6 @@
 package fergoman123.mods.msb.block;
 
 import fergoman123.mods.msb.reference.Names;
-import fergoman123.mods.msb.util.IBlockMSB;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -9,7 +8,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class BlockEgg extends BlockMSB implements IBlockMSB
+public class BlockEgg extends BlockMSB
 {
     public BlockEgg()
     {

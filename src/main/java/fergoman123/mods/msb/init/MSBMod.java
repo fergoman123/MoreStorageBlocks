@@ -12,25 +12,28 @@ package fergoman123.mods.msb.init;
  import cpw.mods.fml.common.event.FMLInitializationEvent;
  import cpw.mods.fml.common.event.FMLPostInitializationEvent;
  import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+ import fergoman123.mods.msb.helper.LogHelper;
  import fergoman123.mods.msb.reference.MetadataMSB;
 
-public class MSBMod
+ public class MSBMod
 {
 
     public static void preInit(FMLPreInitializationEvent evt)
     {
         MetadataMSB.writeMetadata(evt.getModMetadata());
         Tabs.init();
+        LogHelper.info("pre-initialising Mod");
     }
 
     public static void load(FMLInitializationEvent evt)
     {
         ModBlocks.init();
         Recipes.init();
+        LogHelper.info("initializing Mod");
     }
 
     public static void modsLoaded(FMLPostInitializationEvent evt)
     {
-
+        LogHelper.info("Mod loaded");
     }
 }

@@ -4,7 +4,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fergoman123.mods.fergoutil.helper.NameHelper;
 import fergoman123.mods.msb.reference.Names;
-import fergoman123.mods.msb.util.IBlockMSB;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,7 +15,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.Random;
 
-public class BlockDye extends BlockMSB implements IBlockMSB
+public class BlockDye extends BlockMSBST
 {
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
@@ -29,7 +28,12 @@ public class BlockDye extends BlockMSB implements IBlockMSB
         this.setResistance(50f);
     }
 
-    public Item getItemDropped(int par1, Random rand, int par3)
+    public Item getItemDropped(int metadata, Random random, int fortune)
+    {
+        return Item.getItemFromBlock(this);
+    }
+
+    public Item getItem(World world, int x, int y, int z)
     {
         return Item.getItemFromBlock(this);
     }
@@ -40,6 +44,7 @@ public class BlockDye extends BlockMSB implements IBlockMSB
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tabs, List list)
     {
@@ -66,10 +71,5 @@ public class BlockDye extends BlockMSB implements IBlockMSB
     public IIcon getIcon(int side, int metadata)
     {
         return this.icons[metadata];
-    }
-
-    public Item getItem(World world, int x, int y, int z)
-    {
-        return Item.getItemFromBlock(this);
     }
 }

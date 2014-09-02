@@ -15,13 +15,20 @@ import fergoman123.mods.msb.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 
+import java.util.List;
 import java.util.Random;
 
-public abstract class BlockMSB extends Block
+public abstract class BlockMSBST extends Block
 {
-    public BlockMSB(Material material)
+
+    public IIcon[] icons;
+
+    public BlockMSBST(Material material)
     {
         super(material);
         this.setCreativeTab(Tabs.tabMSB);
@@ -29,7 +36,7 @@ public abstract class BlockMSB extends Block
         this.setResistance(50f);
     }
 
-    public BlockMSB()
+    public BlockMSBST()
     {
         this(Material.iron);
     }
@@ -39,10 +46,15 @@ public abstract class BlockMSB extends Block
         return String.format("tile.%s%s", Reference.textureLoc, NameHelper.getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
-    public void registerBlockIcons(IIconRegister register)
-    {
-        blockIcon = register.registerIcon(String.format("%s", NameHelper.getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
-    }
-
     public abstract Item getItemDropped(int metadata, Random random, int fortune);
+
+    public abstract int damageDropped(int metadata);
+
+    public abstract IIcon getIcon(int side, int metadata);
+
+    public abstract void registerBlockIcons(IIconRegister register);
+
+    public abstract void getSubBlocks(Item item, CreativeTabs tabs, List list);
+
+    public abstract Item getItem(World world, int x, int y, int z);
 }

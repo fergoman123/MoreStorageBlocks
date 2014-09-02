@@ -25,11 +25,11 @@ public class ModBlocks
     public static final BlockMSB blockBook = new BlockBook();
     public static final BlockMSB blockCarrot = new BlockCarrotStorage();
     public static final BlockMSB blockCharcoal = new BlockCharcoal();
-    public static final BlockMSB blockDye = new BlockDye();
+    public static final BlockMSBST blockDye = new BlockDye();
     public static final BlockMSB blockEgg = new BlockEgg();
     public static final BlockMSB blockEnderPearl = new BlockEnderPearl();
     public static final BlockMSB blockEnderEye = new BlockEnderEye();
-    public static final BlockMSB blockGoldApple = new BlockGoldApple();
+    public static final BlockMSBST blockGoldApple = new BlockGoldApple();
     public static final BlockMSB blockGunpowder = new BlockGunpowder();
     public static final BlockMSB blockNetherWart = new BlockNetherWartStorage();
     public static final BlockMSB blockPotato = new BlockPotatoStorage();
