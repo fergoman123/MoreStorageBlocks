@@ -51,19 +51,32 @@ dependencies {
     compile files('${config.dep}')
 }
 
-processResources
-{
+jar {
+    dependsOn "incrementBuildNumber"
+    classifier = 'universal'
+    version = "${project.version}"
+}
 
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-                
-        // replace version and mcversion
-        expand 'mod_version':project.version, 'minecraft_version':project.minecraft.version
+sourceSets{
+    main{
+        java{
+            srcDir new File(project.projectDir.parentFile, "src")
+        }
     }
-        
-    // copy everything else, thats not the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
+}
+
+task sourceJar(type: Jar){
+    from sourceSets.main.allSource
+    classifier = 'src'
+    version = "${project.version}"
+}
+
+task devJar(type: Jar){
+    from sourceSets.main.output
+    classifier = 'dev'
+    version = "${project.version}"
+}
+
+artifacts{
+    archives sourceJar, devJar
 }
