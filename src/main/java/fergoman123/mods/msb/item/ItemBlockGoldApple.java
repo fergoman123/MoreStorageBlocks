@@ -12,11 +12,14 @@ package fergoman123.mods.msb.item;
 import fergoman123.mods.msb.init.ModBlocks;
 import fergoman123.mods.msb.reference.Names;
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemMultiTexture;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockGoldApple extends ItemBlockMSB
+import java.util.List;
+
+ public class ItemBlockGoldApple extends ItemBlockMSB
 {
 
     public ItemBlockGoldApple(Block block)
@@ -32,5 +35,20 @@ public class ItemBlockGoldApple extends ItemBlockMSB
             return EnumRarity.epic;
         else
             return EnumRarity.common;
+    }
+
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean extraInfo)
+    {
+          if (stack.getItemDamage() == 0)
+          {
+              list.add("Unlocalized Name: MSB:blockGoldApple1");
+          }
+
+          if (stack.getItemDamage() == 1)
+          {
+              list.add("Unlocalized Name: MSB:blockGoldApple2");
+          }
+//        case 0:list.add("Unlocalized Name: MSB:blockGoldApple1");
+//        case 1:list.add("Unlocalized Name: MSB:blockGoldApple2");
     }
 }
