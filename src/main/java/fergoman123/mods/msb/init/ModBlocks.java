@@ -9,15 +9,17 @@
 
 package fergoman123.mods.msb.init;
 
-import cpw.mods.fml.common.registry.GameRegistry.ObjectHolder;
-import fergoman123.mods.fergoutil.helper.RegisterHelper;
-import fergoman123.mods.msb.block.*;
-import fergoman123.mods.msb.item.ItemBlockDye;
-import fergoman123.mods.msb.item.ItemBlockGoldApple;
-import fergoman123.mods.msb.reference.ModInfo;
-import fergoman123.mods.msb.reference.Names.Blocks;
+ import fergoman123.mods.msb.block.*;
+ import fergoman123.mods.msb.item.ItemBlockDye;
+ import fergoman123.mods.msb.item.ItemBlockGoldApple;
+ import fergoman123.mods.msb.reference.Names.Blocks;
+ import net.minecraft.item.ItemStack;
+ import net.minecraftforge.oredict.OreDictionary;
 
-public class ModBlocks
+ import static fergoman123.mods.fergoutil.helper.RegisterHelper.registerBlock;
+ import static fergoman123.mods.fergoutil.helper.RegisterHelper.registerOre;
+
+ public class ModBlocks
 {
     public static final BlockMSB blockApple = new BlockApple();
     public static final BlockMSB blockArrow = new BlockArrow();
@@ -41,29 +43,60 @@ public class ModBlocks
     public static final BlockMSB blockLeather = new BlockLeather();
     public static final BlockMSB blockBucket = new BlockBucket();
     public static final BlockMSB blockStick = new BlockStick();
+    public static final BlockMSB blockFlint = new BlockFlint();
 
     public static void init()
     {
-        RegisterHelper.registerBlock(blockApple, Blocks.blockApple);
-        RegisterHelper.registerBlock(blockArrow, Blocks.blockArrow);
-        RegisterHelper.registerBlock(blockBlazeRod, Blocks.blockBlazeRod);
-        RegisterHelper.registerBlock(blockBook, Blocks.blockBook);
-        RegisterHelper.registerBlock(blockCarrot, Blocks.blockCarrot);
-        RegisterHelper.registerBlock(blockCharcoal, Blocks.blockCharcoal);
-        RegisterHelper.registerBlock(blockDye, ItemBlockDye.class, Blocks.blockDyeName);
-        RegisterHelper.registerBlock(blockEgg, Blocks.blockEgg);
-        RegisterHelper.registerBlock(blockEnderPearl, Blocks.blockEnderPearl);
-        RegisterHelper.registerBlock(blockEnderEye, Blocks.blockEnderEye);
-        RegisterHelper.registerBlock(blockGoldApple, ItemBlockGoldApple.class, Blocks.blockGoldAppleName);
-        RegisterHelper.registerBlock(blockGunpowder, Blocks.blockGunpowder);
-        RegisterHelper.registerBlock(blockNetherWart, Blocks.blockNetherWart);
-        RegisterHelper.registerBlock(blockPotato, Blocks.blockPotato);
-        RegisterHelper.registerBlock(blockRottenFlesh, Blocks.blockRottenFlesh);
-        RegisterHelper.registerBlock(blockSlimeball, Blocks.blockSlimeball);
-        RegisterHelper.registerBlock(blockFireball, Blocks.blockFireball);
-        RegisterHelper.registerBlock(blockSeeds, Blocks.blockSeeds);
-        RegisterHelper.registerBlock(blockLead, Blocks.blockLead);
-        RegisterHelper.registerBlock(blockLeather, Blocks.blockLeather);
-        RegisterHelper.registerBlock(blockBucket, Blocks.blockBucket);
+        registerBlock(blockApple, Blocks.blockApple);
+        registerBlock(blockArrow, Blocks.blockArrow);
+        registerBlock(blockBlazeRod, Blocks.blockBlazeRod);
+        registerBlock(blockBook, Blocks.blockBook);
+        registerBlock(blockCarrot, Blocks.blockCarrot);
+        registerBlock(blockCharcoal, Blocks.blockCharcoal);
+        registerBlock(blockDye, ItemBlockDye.class, Blocks.blockDyeName);
+        registerBlock(blockEgg, Blocks.blockEgg);
+        registerBlock(blockEnderPearl, Blocks.blockEnderPearl);
+        registerBlock(blockEnderEye, Blocks.blockEnderEye);
+        registerBlock(blockGoldApple, ItemBlockGoldApple.class, Blocks.blockGoldAppleName);
+        registerBlock(blockGunpowder, Blocks.blockGunpowder);
+        registerBlock(blockNetherWart, Blocks.blockNetherWart);
+        registerBlock(blockPotato, Blocks.blockPotato);
+        registerBlock(blockRottenFlesh, Blocks.blockRottenFlesh);
+        registerBlock(blockSlimeball, Blocks.blockSlimeball);
+        registerBlock(blockFireball, Blocks.blockFireball);
+        registerBlock(blockSeeds, Blocks.blockSeeds);
+        registerBlock(blockLead, Blocks.blockLead);
+        registerBlock(blockLeather, Blocks.blockLeather);
+        registerBlock(blockBucket, Blocks.blockBucket);
+        registerBlock(blockStick, Blocks.blockStick);
+        registerBlock(blockFlint, Blocks.blockFlint);
+    }
+
+    private static void registerOres()
+    {
+        registerOre(Blocks.blockApple, blockApple);
+        registerOre(Blocks.blockArrow, blockArrow);
+        registerOre(Blocks.blockBlazeRod, blockBlazeRod);
+        registerOre(Blocks.blockBook, blockBook);
+        registerOre(Blocks.blockCarrot, blockCarrot);
+        registerOre(Blocks.blockCharcoal, blockCharcoal);
+        registerOre(Blocks.blockDyeName, new ItemStack(blockDye, 1, OreDictionary.WILDCARD_VALUE));
+        registerOre(Blocks.blockEgg, blockEgg);
+        registerOre(Blocks.blockEnderPearl, blockEnderPearl);
+        registerOre(Blocks.blockEnderEye, blockEnderEye);
+        registerOre(Blocks.blockGoldAppleName, new ItemStack(blockGoldApple, 1, OreDictionary.WILDCARD_VALUE));
+        registerOre(Blocks.blockGunpowder, blockGunpowder);
+        registerOre(Blocks.blockNetherWart, blockNetherWart);
+        registerOre(Blocks.blockPotato, blockPotato);
+        registerOre(Blocks.blockRottenFlesh, blockRottenFlesh);
+        registerOre(Blocks.blockSlimeball, blockSlimeball);
+        registerOre(Blocks.blockFireball, blockFireball);
+        registerOre(Blocks.blockSeeds, blockSeeds);
+        registerOre(Blocks.blockLead, blockLead);
+        registerOre(Blocks.blockLeather, blockLeather);
+        registerOre(Blocks.blockBucket, blockBucket);
+        registerOre(Blocks.blockStick, blockStick);
+        registerOre(Blocks.blockFlint, blockFlint);
+
     }
 }

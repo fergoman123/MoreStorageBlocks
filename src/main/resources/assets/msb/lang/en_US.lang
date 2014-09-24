@@ -38,3 +38,5 @@ tile.MSB:blockLead.name=Block of Leads
 tile.MSB:blockGunpowder.name=Block of Gunpowder
 tile.MSB:blockSlimeball.name=Block of Slimeball
 tile.MSB:blockBlazeRod.name=Block of Blaze Rods
+tile.MSB:blockStick.name=Block of Sticks
+tile.MSB:blockFlint.name=Block of Flint

@@ -38,6 +38,7 @@ public class Names
         public static final String blockCarrot = "blockCarrot";
         public static final String blockArrow = "blockArrow";
         public static final String blockBlazeRod = "blockBlazeRod";
+        public static final String blockFlint = "blockFlint";
     }
 
     public static final class Locale
