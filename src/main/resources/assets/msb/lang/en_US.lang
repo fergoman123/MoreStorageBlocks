@@ -1,5 +1,7 @@
+# Creative Tabs
 MSB:tabMSB=More Storage Blocks
 
+# Blocks
 tile.MSB:blockApple.name=Block of Apple
 tile.MSB:blockCharcoal.name=Block of Charcoal
 tile.MSB:blockGA.blockGoldApple1.name=Block of Golden Apple
@@ -40,3 +42,30 @@ tile.MSB:blockSlimeball.name=Block of Slimeball
 tile.MSB:blockBlazeRod.name=Block of Blaze Rods
 tile.MSB:blockStick.name=Block of Sticks
 tile.MSB:blockFlint.name=Block of Flint
+
+# Ore Dictionary
+oreDict.name=Ore Dictionary Name:
+
+oreDict.blockApple=blockApple
+oreDict.blockArrow=blockArrow
+oreDict.blockBlazeRod=blockBlazeRod
+oreDict.blockBook=blockBook
+oreDict.blockCarrot=blockCarrot
+oreDict.blockCharcoal=blockCharcoal
+oreDict.blockDye=blockDye
+oreDict.blockEgg=blockEgg
+oreDict.blockEnderPearl=blockEnderPearl
+oreDict.blockEnderEye=blockEnderEye
+oreDict.blockGA=blockGA
+oreDict.blockGunpowder=blockGunpowder
+oreDict.blockNetherWart=blockNetherWart
+oreDict.blockPotato=blockPotato
+oreDict.blockRottenFlesh=blockRottenFlesh
+oreDict.blockSlimeball=blockSlimeball
+oreDict.blockFireball=blockFireball
+oreDict.blockSeeds=blockSeeds
+oreDict.blockLead=blockLead
+oreDict.blockLeather=blockLeather
+oreDict.blockBucket=blockBucket
+oreDict.blockStick=blockStick
+oreDict.blockFlint=blockFlint

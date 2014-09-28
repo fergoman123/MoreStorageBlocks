@@ -25,7 +25,7 @@ import fergoman123.mods.msb.reference.Reference;
 public class MoreStorageBlocks
 {
     @Instance(ModInfo.modid)
-    public static MoreStorageBlocks instance;
+    private static MoreStorageBlocks instance;
 
     @SidedProxy(clientSide = Reference.clientProxyClass, serverSide = Reference.serverProxyClass)
     public static IProxy proxy;
@@ -46,5 +46,10 @@ public class MoreStorageBlocks
     public void modsLoaded(FMLPostInitializationEvent evt)
     {
         MSBMod.modsLoaded(evt);
+    }
+
+    public static MoreStorageBlocks getInstance()
+    {
+        return instance;
     }
 }

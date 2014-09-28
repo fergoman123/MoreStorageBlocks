@@ -54,4 +54,5 @@ public class RecipeList
     public static final Object[] blockLead = new Object[]{blockRecipe, x, new ItemStack(Items.lead)};
     public static final Object[] blockLeather = new Object[]{blockRecipe, x, new ItemStack(Items.leather)};
     public static final Object[] blockBucket = new Object[]{blockRecipe, x, new ItemStack(Items.bucket)};
+    public static final Object[] blockFlint = new Object[]{blockRecipe, x, new ItemStack(Items.flint)};
 }

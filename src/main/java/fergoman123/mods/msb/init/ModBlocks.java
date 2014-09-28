@@ -9,15 +9,14 @@
 
 package fergoman123.mods.msb.init;
 
+ import cpw.mods.fml.common.registry.GameRegistry;
  import fergoman123.mods.msb.block.*;
- import fergoman123.mods.msb.item.ItemBlockDye;
- import fergoman123.mods.msb.item.ItemBlockGoldApple;
+ import fergoman123.mods.msb.itemblock.*;
  import fergoman123.mods.msb.reference.Names.Blocks;
+ import net.minecraft.block.Block;
+ import net.minecraft.item.ItemBlock;
  import net.minecraft.item.ItemStack;
  import net.minecraftforge.oredict.OreDictionary;
-
- import static fergoman123.mods.fergoutil.helper.RegisterHelper.registerBlock;
- import static fergoman123.mods.fergoutil.helper.RegisterHelper.registerOre;
 
  public class ModBlocks
 {
@@ -47,29 +46,30 @@ package fergoman123.mods.msb.init;
 
     public static void init()
     {
-        registerBlock(blockApple, Blocks.blockApple);
-        registerBlock(blockArrow, Blocks.blockArrow);
-        registerBlock(blockBlazeRod, Blocks.blockBlazeRod);
-        registerBlock(blockBook, Blocks.blockBook);
-        registerBlock(blockCarrot, Blocks.blockCarrot);
-        registerBlock(blockCharcoal, Blocks.blockCharcoal);
+        registerBlock(blockApple, ItemBlockApple.class, Blocks.blockApple);
+        registerBlock(blockArrow, ItemBlockArrow.class, Blocks.blockArrow);
+        registerBlock(blockBlazeRod, ItemBlockBlazeRod.class, Blocks.blockBlazeRod);
+        registerBlock(blockBook, ItemBlockBook.class, Blocks.blockBook);
+        registerBlock(blockCarrot, ItemBlockCarrot.class, Blocks.blockCarrot);
+        registerBlock(blockCharcoal, ItemBlockCharcoal.class, Blocks.blockCharcoal);
         registerBlock(blockDye, ItemBlockDye.class, Blocks.blockDyeName);
-        registerBlock(blockEgg, Blocks.blockEgg);
-        registerBlock(blockEnderPearl, Blocks.blockEnderPearl);
-        registerBlock(blockEnderEye, Blocks.blockEnderEye);
+        registerBlock(blockEgg, ItemBlockEgg.class, Blocks.blockEgg);
+        registerBlock(blockEnderPearl, ItemBlockEnderPearl.class, Blocks.blockEnderPearl);
+        registerBlock(blockEnderEye, ItemBlockEnderEye.class, Blocks.blockEnderEye);
         registerBlock(blockGoldApple, ItemBlockGoldApple.class, Blocks.blockGoldAppleName);
-        registerBlock(blockGunpowder, Blocks.blockGunpowder);
-        registerBlock(blockNetherWart, Blocks.blockNetherWart);
-        registerBlock(blockPotato, Blocks.blockPotato);
-        registerBlock(blockRottenFlesh, Blocks.blockRottenFlesh);
-        registerBlock(blockSlimeball, Blocks.blockSlimeball);
-        registerBlock(blockFireball, Blocks.blockFireball);
-        registerBlock(blockSeeds, Blocks.blockSeeds);
-        registerBlock(blockLead, Blocks.blockLead);
-        registerBlock(blockLeather, Blocks.blockLeather);
-        registerBlock(blockBucket, Blocks.blockBucket);
-        registerBlock(blockStick, Blocks.blockStick);
-        registerBlock(blockFlint, Blocks.blockFlint);
+        registerBlock(blockGunpowder, ItemBlockGunpowder.class, Blocks.blockGunpowder);
+        registerBlock(blockNetherWart, ItemBlockNetherWart.class, Blocks.blockNetherWart);
+        registerBlock(blockPotato, ItemBlockPotato.class, Blocks.blockPotato);
+        registerBlock(blockRottenFlesh, ItemBlockRottenFlesh.class, Blocks.blockRottenFlesh);
+        registerBlock(blockSlimeball, ItemBlockSlimeball.class, Blocks.blockSlimeball);
+        registerBlock(blockFireball, ItemBlockFireball.class, Blocks.blockFireball);
+        registerBlock(blockSeeds, ItemBlockSeeds.class, Blocks.blockSeeds);
+        registerBlock(blockLead, ItemBlockLead.class, Blocks.blockLead);
+        registerBlock(blockLeather, ItemBlockLeather.class, Blocks.blockLeather);
+        registerBlock(blockBucket, ItemBlockBucket.class, Blocks.blockBucket);
+        registerBlock(blockStick, ItemBlockStick.class, Blocks.blockStick);
+        registerBlock(blockFlint, ItemBlockFlint.class, Blocks.blockFlint);
+        registerOres();
     }
 
     private static void registerOres()
@@ -98,5 +98,20 @@ package fergoman123.mods.msb.init;
         registerOre(Blocks.blockStick, blockStick);
         registerOre(Blocks.blockFlint, blockFlint);
 
+    }
+
+    private static Block registerBlock(Block block, Class<? extends ItemBlock> itemclass, String name)
+    {
+        return GameRegistry.registerBlock(block, itemclass, name);
+    }
+
+    private static void registerOre(String oreName, Block ore)
+    {
+        OreDictionary.registerOre(oreName, ore);
+    }
+
+    private static void registerOre(String oreName, ItemStack ore)
+    {
+        OreDictionary.registerOre(oreName, ore);
     }
 }
