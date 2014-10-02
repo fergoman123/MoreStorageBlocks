@@ -31,7 +31,7 @@ public class ItemBlockArrow extends ItemBlockMSB
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean extraInfo) {
-        list.add(NameHelper.translateToLocal(Names.OreDictNames.oreDictName));
-        list.add(NameHelper.translateToLocal(Names.OreDictNames.blockArrow));
+        list.add(NameHelper.translateToLocal(Names.OreDict.oreDictName));
+        list.add(NameHelper.translateToLocal(Names.OreDict.blockArrow));
     }
 }

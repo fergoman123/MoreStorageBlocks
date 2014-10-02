@@ -19,7 +19,7 @@ import java.util.List;
 
 public abstract class ItemBlockMSB extends ItemBlock
 {
-    public static Names.OreDictNames odn = new Names.OreDictNames();
+    public static Names.OreDict odn = new Names.OreDict();
 
     public ItemBlockMSB(Block block) {
         super(block);

@@ -11,7 +11,29 @@ package fergoman123.mods.msb.reference;
 
 public class Names
 {
-    public static OreDictNames odn = new OreDictNames();
+    public static final OreDict odn = new OreDict();
+    public static final Blocks blocks = new Blocks();
+    public static final Locale locale = new Locale();
+
+    public static final class BlocksUtil
+    {
+        public static final String[] blockNames =
+                {
+                  blocks.blockApple, blocks.blockArrow, blocks.blockBlazeRod, blocks.blockBook,
+                  blocks.blockCarrot, blocks.blockCharcoal, blocks.blockEgg, blocks.blockEnderPearl,
+                  blocks.blockEnderEye, blocks.blockGunpowder, blocks.blockNetherWart, blocks.blockPotato,
+                  blocks.blockRottenFlesh, blocks.blockSlimeball, blocks.blockFireball, blocks.blockLead,
+                  blocks.blockLeather, blocks.blockBucket, blocks.blockStick, blocks.blockFlint, blocks.blockBone,
+                  blocks.blockSugarcane, blocks.blockSugar, blocks.blockNetherStar, blocks.blockClay, blocks.blockString,
+                  blocks.blockFeather, blocks.blockBread, blocks.blockCookie, blocks.blockPumpkinPie, blocks.blockGhastTear
+                };
+
+        public static final String[] blockNamesItemStack =
+                {
+                  blocks.blockDyeName, blocks.blockGoldAppleName, blocks.blockSeedsName,
+                  blocks.blockPorkchopName, blocks.blockBeefName, blocks.blockSkull
+                };
+    }
 
     public static final class Blocks
     {
@@ -25,7 +47,8 @@ public class Names
         public static final String blockEnderEye = "blockEnderEye";
         public static final String blockLead = "blockLead";
         public static final String blockReed = "blockReed";
-        public static final String blockSeeds = "blockSeeds";
+        public static final String blockSeedsName = "blockSeeds";
+        public static final String[] blockSeeds = {"blockWheatSeeds", "blockPumpkinSeeds", "blockMelonSeeds"};
         public static final String blockStick = "blockStick";
         public static final String blockLeather = "blockLeather";
         public static final String blockBucket = "blockBucket";
@@ -41,6 +64,24 @@ public class Names
         public static final String blockArrow = "blockArrow";
         public static final String blockBlazeRod = "blockBlazeRod";
         public static final String blockFlint = "blockFlint";
+        public static final String blockBone = "blockBone";
+        public static final String blockSugarcane = "blockSugarcane";
+        public static final String blockSugar = "blockSugar";
+        public static final String blockNetherStar = "blockNetherStar";
+        public static final String blockClay = "blockClay";
+        public static final String blockString = "blockString";
+        public static final String blockFeather = "blockFeather";
+        public static final String blockBread = "blockBread";
+        public static final String blockPorkchopName = "blockPorkchop";
+        public static final String[] blockPorkchop = {"blockRawPorkchop", "blockCookedPorkchop"};
+        public static final String blockFishName = "blockFish";
+        public static final String[] blockFish = {"blockRawFish", "blockRawSalmon", "blockClownfish", "blockPufferfish", "blockCookedFish", "blockCookedSalmon"};
+        public static final String blockCookie = "blockCookie";
+        public static final String blockBeefName = "blockBeef";
+        public static final String[] blockBeef = {"blockRawBeef", "blockCookedBeef"};
+        public static final String blockPumpkinPie = "blockPumpkinPie";
+        public static final String blockGhastTear = "blockGhastTear";
+        public static final String blockSkull = "blockSkull";
     }
 
     public static final class Locale
@@ -49,33 +90,50 @@ public class Names
         public static final String tabMSBTranslated = Reference.textureLoc + tabMSB;
     }
 
-    public static final class OreDictNames
+    public static final class OreDict
     {
-        public static final String oreDictName = "oreDict.name";
+        public static final String oreDict = "oreDict.";
 
-        public static final String blockApple = "oreDict.blockApple";
-        public static final String blockArrow = "oreDict.blockArrow";
-        public static final String blockGA = "oreDict.blockGA";
-        public static final String blockBook = "oreDict.blockBook";
-        public static final String blockEgg = "oreDict.blockEgg";
-        public static final String blockEnderPearl = "oreDict.blockEnderPearl";
-        public static final String blockEnderEye = "oreDict.blockEnderEye";
-        public static final String blockLead = "oreDict.blockLead";
-        public static final String blockReed = "oreDict.blockReed";
-        public static final String blockSeeds = "oreDict.blockSeeds";
-        public static final String blockStick = "oreDict.blockStick";
-        public static final String blockLeather = "oreDict.blockLeather";
-        public static final String blockBucket = "oreDict.blockBucket";
-        public static final String blockDye = "oreDict.blockDye";
-        public static final String blockFireball = "oreDict.blockFireball";
-        public static final String blockSlimeball = "oreDict.blockSlimeball";
-        public static final String blockRottenFlesh = "oreDict.blockRottenFlesh";
-        public static final String blockPotato = "oreDict.blockPotato";
-        public static final String blockNetherWart = "oreDict.blockNetherWart";
-        public static final String blockGunpowder = "oreDict.blockGunpowder";
-        public static final String blockCarrot = "oreDict.blockCarrot";
-        public static final String blockBlazeRod = "oreDict.blockBlazeRod";
-        public static final String blockFlint = "oreDict.blockFlint";
-        public static final String blockCharcoal = "oreDict.blockCharcoal";
+        public static final String oreDictName = oreDict + "name";
+
+        public static final String blockApple = oreDict + Blocks.blockApple;
+        public static final String blockArrow = oreDict + Blocks.blockArrow;
+        public static final String blockGA = oreDict + Blocks.blockGoldAppleName;
+        public static final String blockBook = oreDict + Blocks.blockBook;
+        public static final String blockEgg = oreDict + Blocks.blockEgg;
+        public static final String blockEnderPearl = oreDict + Blocks.blockEnderPearl;
+        public static final String blockEnderEye = oreDict + Blocks.blockEnderEye;
+        public static final String blockLead = oreDict + Blocks.blockLead;
+        public static final String blockReed = oreDict +  Blocks.blockReed;
+        public static final String blockSeeds = oreDict + Blocks.blockSeedsName;
+        public static final String blockStick = oreDict + Blocks.blockStick;
+        public static final String blockLeather = oreDict + Blocks.blockLeather;
+        public static final String blockBucket = oreDict + Blocks.blockBucket;
+        public static final String blockDye = oreDict + Blocks.blockDyeName;
+        public static final String blockFireball = oreDict + Blocks.blockFireball;
+        public static final String blockSlimeball = oreDict + Blocks.blockSlimeball;
+        public static final String blockRottenFlesh = oreDict + Blocks.blockRottenFlesh;
+        public static final String blockPotato = oreDict + Blocks.blockPotato;
+        public static final String blockNetherWart = oreDict + Blocks.blockNetherWart;
+        public static final String blockGunpowder = oreDict + Blocks.blockGunpowder;
+        public static final String blockCarrot = oreDict + Blocks.blockCarrot;
+        public static final String blockBlazeRod = oreDict + Blocks.blockBlazeRod;
+        public static final String blockFlint = oreDict + Blocks.blockFlint;
+        public static final String blockCharcoal = oreDict + Blocks.blockCharcoal;
+        public static final String blockBone = oreDict + Blocks.blockBone;
+        public static final String blockSugarcane = oreDict + Blocks.blockSugarcane;
+        public static final String blockSugar = oreDict + Blocks.blockSugar;
+        public static final String blockNetherStar = oreDict + Blocks.blockNetherStar;
+        public static final String blockClay = oreDict + Blocks.blockClay;
+        public static final String blockString = oreDict + Blocks.blockString;
+        public static final String blockFeather = oreDict + Blocks.blockFeather;
+        public static final String blockBread = oreDict + Blocks.blockBread;
+        public static final String blockPorkchop = oreDict + Blocks.blockPorkchopName;
+        public static final String blockFish = oreDict + Blocks.blockFishName;
+        public static final String blockCookie = oreDict + Blocks.blockCookie;
+        public static final String blockBeef = oreDict + Blocks.blockBeefName;
+        public static final String blockPumpkinPie = oreDict + Blocks.blockPumpkinPie;
+        public static final String blockGhastTear = oreDict + Blocks.blockGhastTear;
+        public static final String blockSkull = oreDict + Blocks.blockSkull;
     }
 }

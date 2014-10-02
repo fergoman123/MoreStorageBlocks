@@ -29,7 +29,7 @@ package fergoman123.mods.msb.itemblock;
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b) {
-        list.add(NameHelper.translateToLocal(Names.OreDictNames.oreDictName));
-        list.add(NameHelper.translateToLocal(Names.OreDictNames.blockDye));
+        list.add(NameHelper.translateToLocal(Names.OreDict.oreDictName));
+        list.add(NameHelper.translateToLocal(Names.OreDict.blockDye));
     }
 }

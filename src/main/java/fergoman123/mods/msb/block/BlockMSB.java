@@ -21,6 +21,8 @@ import java.util.Random;
 
 public abstract class BlockMSB extends Block
 {
+    public Item item;
+
     public BlockMSB(Material material)
     {
         super(material);
@@ -31,7 +33,7 @@ public abstract class BlockMSB extends Block
 
     public BlockMSB()
     {
-        this(Material.iron);
+        this(Material.iron);;
     }
 
     public String getUnlocalizedName()

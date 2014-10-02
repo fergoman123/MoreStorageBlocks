@@ -27,6 +27,7 @@ public abstract class BlockMSBST extends Block
 {
 
     public IIcon[] icons;
+    public Item item;
 
     public BlockMSBST(Material material)
     {

@@ -11,12 +11,14 @@ package fergoman123.mods.msb.init;
 
  import cpw.mods.fml.common.registry.GameRegistry;
  import fergoman123.mods.msb.block.*;
- import fergoman123.mods.msb.itemblock.*;
- import fergoman123.mods.msb.reference.Names.Blocks;
+ import fergoman123.mods.msb.reference.Names;
+ import fergoman123.mods.msb.util.Utils;
  import net.minecraft.block.Block;
  import net.minecraft.item.ItemBlock;
  import net.minecraft.item.ItemStack;
  import net.minecraftforge.oredict.OreDictionary;
+
+ import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
  public class ModBlocks
 {
@@ -37,66 +39,64 @@ package fergoman123.mods.msb.init;
     public static final BlockMSB blockRottenFlesh = new BlockRottenFlesh();
     public static final BlockMSB blockSlimeball = new BlockSlimeball();
     public static final BlockMSB blockFireball = new BlockFireball();
-    public static final BlockMSB blockSeeds = new BlockSeeds();
+    public static final BlockMSBST blockSeeds = new BlockSeeds();
     public static final BlockMSB blockLead = new BlockLead();
     public static final BlockMSB blockLeather = new BlockLeather();
     public static final BlockMSB blockBucket = new BlockBucket();
     public static final BlockMSB blockStick = new BlockStick();
     public static final BlockMSB blockFlint = new BlockFlint();
+    public static final BlockMSB blockBone = new BlockBone();
+    public static final BlockMSB blockSugarcane = new BlockSugarcane();
+    public static final BlockMSB blockSugar = new BlockSugar();
+    public static final BlockMSB blockNetherStar = new BlockNetherStar();
+    public static final BlockMSB blockClay = new BlockClayStorage();
+    public static final BlockMSB blockString = new BlockString();
+    public static final BlockMSB blockFeather = new BlockFeather();
+    public static final BlockMSB blockBread = new BlockBread();
+    public static final BlockMSBST blockPorkchop = new BlockPorkchop();
+    public static final BlockMSBST blockFish = new BlockFish();
+    public static final BlockMSB blockCookie = new BlockCookie();
+    public static final BlockMSBST blockBeef = new BlockBeef();
+    public static final BlockMSB blockPumpkinPie = new BlockPumpkinPie();
+    public static final BlockMSB blockGhastTear = new BlockGhastTear();
+    public static final BlockMSBST blockSkull = new BlockSkullStorage();
 
     public static void init()
     {
-        registerBlock(blockApple, ItemBlockApple.class, Blocks.blockApple);
-        registerBlock(blockArrow, ItemBlockArrow.class, Blocks.blockArrow);
-        registerBlock(blockBlazeRod, ItemBlockBlazeRod.class, Blocks.blockBlazeRod);
-        registerBlock(blockBook, ItemBlockBook.class, Blocks.blockBook);
-        registerBlock(blockCarrot, ItemBlockCarrot.class, Blocks.blockCarrot);
-        registerBlock(blockCharcoal, ItemBlockCharcoal.class, Blocks.blockCharcoal);
-        registerBlock(blockDye, ItemBlockDye.class, Blocks.blockDyeName);
-        registerBlock(blockEgg, ItemBlockEgg.class, Blocks.blockEgg);
-        registerBlock(blockEnderPearl, ItemBlockEnderPearl.class, Blocks.blockEnderPearl);
-        registerBlock(blockEnderEye, ItemBlockEnderEye.class, Blocks.blockEnderEye);
-        registerBlock(blockGoldApple, ItemBlockGoldApple.class, Blocks.blockGoldAppleName);
-        registerBlock(blockGunpowder, ItemBlockGunpowder.class, Blocks.blockGunpowder);
-        registerBlock(blockNetherWart, ItemBlockNetherWart.class, Blocks.blockNetherWart);
-        registerBlock(blockPotato, ItemBlockPotato.class, Blocks.blockPotato);
-        registerBlock(blockRottenFlesh, ItemBlockRottenFlesh.class, Blocks.blockRottenFlesh);
-        registerBlock(blockSlimeball, ItemBlockSlimeball.class, Blocks.blockSlimeball);
-        registerBlock(blockFireball, ItemBlockFireball.class, Blocks.blockFireball);
-        registerBlock(blockSeeds, ItemBlockSeeds.class, Blocks.blockSeeds);
-        registerBlock(blockLead, ItemBlockLead.class, Blocks.blockLead);
-        registerBlock(blockLeather, ItemBlockLeather.class, Blocks.blockLeather);
-        registerBlock(blockBucket, ItemBlockBucket.class, Blocks.blockBucket);
-        registerBlock(blockStick, ItemBlockStick.class, Blocks.blockStick);
-        registerBlock(blockFlint, ItemBlockFlint.class, Blocks.blockFlint);
-        registerOres();
+        for (int i = 0; i < Utils.blockNames.length; i++)
+        {
+            registerBlock(Utils.blocksList[i], Utils.itemblocks[i], Utils.blockNames[i]);
+        }
     }
 
-    private static void registerOres()
-    {
-        registerOre(Blocks.blockApple, blockApple);
-        registerOre(Blocks.blockArrow, blockArrow);
-        registerOre(Blocks.blockBlazeRod, blockBlazeRod);
-        registerOre(Blocks.blockBook, blockBook);
-        registerOre(Blocks.blockCarrot, blockCarrot);
-        registerOre(Blocks.blockCharcoal, blockCharcoal);
-        registerOre(Blocks.blockDyeName, new ItemStack(blockDye, 1, OreDictionary.WILDCARD_VALUE));
-        registerOre(Blocks.blockEgg, blockEgg);
-        registerOre(Blocks.blockEnderPearl, blockEnderPearl);
-        registerOre(Blocks.blockEnderEye, blockEnderEye);
-        registerOre(Blocks.blockGoldAppleName, new ItemStack(blockGoldApple, 1, OreDictionary.WILDCARD_VALUE));
-        registerOre(Blocks.blockGunpowder, blockGunpowder);
-        registerOre(Blocks.blockNetherWart, blockNetherWart);
-        registerOre(Blocks.blockPotato, blockPotato);
-        registerOre(Blocks.blockRottenFlesh, blockRottenFlesh);
-        registerOre(Blocks.blockSlimeball, blockSlimeball);
-        registerOre(Blocks.blockFireball, blockFireball);
-        registerOre(Blocks.blockSeeds, blockSeeds);
-        registerOre(Blocks.blockLead, blockLead);
-        registerOre(Blocks.blockLeather, blockLeather);
-        registerOre(Blocks.blockBucket, blockBucket);
-        registerOre(Blocks.blockStick, blockStick);
-        registerOre(Blocks.blockFlint, blockFlint);
+    private static void registerOresBlock(){
+        Block[] blocks = new Block[]
+                {
+                    blockApple, blockArrow, blockBlazeRod, blockCarrot, blockCharcoal,
+                    blockEgg, blockEnderPearl, blockEnderEye, blockNetherWart, blockPotato,
+                    blockRottenFlesh, blockSlimeball, blockFireball, blockLead, blockLeather,
+                    blockBucket, blockStick, blockFlint, blockBone, blockSugarcane, blockSugar,
+                    blockNetherStar, blockClay, blockString, blockFeather, blockBread,
+                    blockCookie, blockPumpkinPie, blockGhastTear
+                };
+
+
+
+        Block[] blocksItemStack = new Block[]
+                {
+                        blockDye, blockGoldApple, blockSeeds, blockPorkchop, blockFish, blockSkull
+                };
+
+
+        for (int i = 0; i < blocks.length; i++)
+        {
+            registerOre(Names.BlocksUtil.blockNames[i], blocks[i]);
+        }
+
+        for (int i = 0; i < blocksItemStack.length; i++)
+        {
+            registerOre(Names.BlocksUtil.blockNamesItemStack[i], new ItemStack(blocksItemStack[i], 1, WILDCARD_VALUE));
+        }
 
     }
 

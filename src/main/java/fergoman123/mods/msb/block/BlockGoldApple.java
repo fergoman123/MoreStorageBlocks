@@ -23,6 +23,7 @@ package fergoman123.mods.msb.block;
 
  public class BlockGoldApple extends BlockMSBST
 {
+    public static final String[] subTypes = new String[]{"blockGoldApple1", "blockGoldApple2"};
 
     public BlockGoldApple()
     {
