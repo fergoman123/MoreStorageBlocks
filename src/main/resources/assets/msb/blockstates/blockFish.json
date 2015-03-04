@@ -1,0 +1,10 @@
+{
+  "variants":{
+    "variant=blockrawfish":{"model":"msb:blockRawFish"},
+    "variant=blockrawsalmon":{"model":"msb:blockRawSalmon"},
+    "variant=blockclownfish":{"model":"msb:blockClownfish"},
+    "variant=blockpufferfish":{"model":"msb:blockPufferfish"},
+    "variant=blockcookedfish":{"model":"msb:blockCookedFish"},
+    "variant=blockcookedsalmon":{"model":"msb:blockCookedSalmon"}
+  }
+}

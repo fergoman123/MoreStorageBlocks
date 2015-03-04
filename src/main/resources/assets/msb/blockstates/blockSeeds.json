@@ -1,0 +1,7 @@
+{
+  "variants":{
+    "variant=blockwheatseeds":{"model": "msb:blockWheatSeeds"},
+    "variant=blockmelonseeds":{"model": "msb:blockMelonSeeds"},
+    "variant=blockpumpkinseeds":{"model": "msb:blockpumpkinseeds"}
+  }
+}
