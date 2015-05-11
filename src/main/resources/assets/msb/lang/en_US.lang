@@ -74,5 +74,9 @@ tile.msb.blockSkull.blockSkullCreeper.name=Block of Creeper Heads
 tile.msb.blockSkull.blockSkullWither.name=Block of Wither Skeleton Skulls
 tile.msb.blockSkull.blockSkullZombie.name=Block of Zombie Heads
 tile.msb.blockSkull.blockSkullSkeleton.name=Block of Skeleton Skulls
+tile.msb.blockMutton.blockRawMutton.name=Block of Raw Mutton
+tile.msb.blockMutton.blockCookedMutton.name=Block of Cooked Mutton
+tile.msb.blockRabbit.blockRawRabbit.name=Block of Raw Rabbits
+tile.msb.blockRabbit.blockCookedRabbit.name=Block of Cooked Rabbits
 
 msb.loc.oredictname=Ore Dictionary Name:

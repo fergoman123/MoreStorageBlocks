@@ -1,38 +1,30 @@
 package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.fergoutil.block.BlockFergo;
-import io.github.fergoman123.msb.MSB;
+import io.github.fergoman123.msb.api.BlockMultiMSB;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BlockSkullStorage extends BlockFergo
+public class BlockSkullStorage extends BlockMultiMSB
 {
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumType.class);
 
     public BlockSkullStorage()
     {
-        super(Material.iron, 1, MSB.tabMSB, 5f, 10f, BlockNames.blockSkullName);
+        super(Material.iron, BlockNames.blockSkull, BlockNames.blockSkullName);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockSkullSkeleton));
-        this.setHarvestLevel("pickaxe", 1);
         this.setStepSound(BlockFergo.soundTypeMetal);
-    }
-
-    @Override
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        list.add(new ItemStack(itemIn, 1, EnumType.blockSkullSkeleton.ordinal()));
-        list.add(new ItemStack(itemIn, 1, EnumType.blockSkullWither.ordinal()));
-        list.add(new ItemStack(itemIn, 1, EnumType.blockSkullZombie.ordinal()));
-        list.add(new ItemStack(itemIn, 1, EnumType.blockSkullCreeper.ordinal()));
     }
 
     @Override
@@ -42,31 +34,42 @@ public class BlockSkullStorage extends BlockFergo
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        int meta = ((EnumType)state.getValue(VARIANT)).ordinal();
 
-        return meta;
+        return ((EnumType)state.getValue(VARIANT)).ordinal();
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[]{VARIANT});
+    public BlockState createBlockState() {
+        return new BlockState(this, VARIANT);
     }
 
-    public static enum EnumType implements IStringSerializable
+    @Override
+    public Item getItem(World worldIn, BlockPos pos) {
+        return Item.getItemFromBlock(this);
+    }
+
+    @Override
+    public int damageDropped(IBlockState state) {
+        return ((EnumType)state.getValue(VARIANT)).ordinal();
+    }
+
+    @Override
+    public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+        list.add(new ItemStack(item, 1, EnumType.blockSkullSkeleton.getMeta()));
+        list.add(new ItemStack(item, 1, EnumType.blockSkullWither.getMeta()));
+        list.add(new ItemStack(item, 1, EnumType.blockSkullZombie.getMeta()));
+        list.add(new ItemStack(item, 1, EnumType.blockSkullCreeper.getMeta()));
+    }
+
+    public enum EnumType implements IStringSerializable
     {
         blockSkullSkeleton,
         blockSkullWither,
         blockSkullZombie,
         blockSkullCreeper;
 
-        @Override
-        public String getName() {
-            return this.name();
-        }
-
-        @Override
-        public String toString() {
-            return getName();
-        }
+        public String getName(){return this.name();}
+        public String toString(){return this.getName();}
+        public int getMeta(){return this.ordinal();}
     }
 }

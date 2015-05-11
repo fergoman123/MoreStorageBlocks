@@ -12,7 +12,6 @@ public class CreativeTabMSB extends CreativeTabs
     public CreativeTabMSB(String label)
     {
         super(label);
-        this.setBackgroundImageName("items.png");
     }
 
     @Override

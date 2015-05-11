@@ -1,12 +1,14 @@
 package io.github.fergoman123.msb;
 
 import io.github.fergoman123.fergoutil.proxy.IProxy;
+import io.github.fergoman123.msb.common.ModelRegister;
 import io.github.fergoman123.msb.common.OreDictRegistry;
 import io.github.fergoman123.msb.info.Locale;
 import io.github.fergoman123.msb.info.MetadataMSB;
 import io.github.fergoman123.msb.info.ModInfo;
 import io.github.fergoman123.msb.info.Reference;
 import io.github.fergoman123.msb.init.ModBlocks;
+import io.github.fergoman123.msb.init.Recipes;
 import io.github.fergoman123.msb.tab.CreativeTabMSB;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -33,13 +35,15 @@ public class MSB
     public void preInit(FMLPreInitializationEvent evt)
     {
         MetadataMSB.writeMetadata(evt.getModMetadata());
-        ModBlocks.init();
     }
 
     @EventHandler
     public void load(FMLInitializationEvent evt)
     {
         ModBlocks.register();
+        ModelRegister.registerModels();
+        ModelRegister.registerVariants();
+        Recipes.init();
         OreDictRegistry.init();
         proxy.registerEventHandlers();
     }

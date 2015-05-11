@@ -1,31 +1,35 @@
 package io.github.fergoman123.msb.common.blocks;
 
-import io.github.fergoman123.fergoutil.block.BlockFergo;
-import io.github.fergoman123.fergoutil.helper.NameHelper;
-import io.github.fergoman123.msb.MSB;
+import io.github.fergoman123.msb.api.BlockMultiMSB;
+import io.github.fergoman123.msb.api.Sounds;
 import io.github.fergoman123.msb.info.BlockNames;
-import io.github.fergoman123.msb.info.ModInfo;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BlockBeef extends BlockFergo {
+public class BlockBeef extends BlockMultiMSB {
+
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumType.class);
 
     public BlockBeef() {
-        super(Material.iron, 1, MSB.tabMSB, 5f, 10f, BlockNames.blockBeefName);
+        super(Material.iron, BlockNames.blockBeef, BlockNames.blockBeefName);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockRawBeef));
-        this.setHarvestLevel("pickaxe", 1);
-        this.setStepSound(Block.soundTypeMetal);
+        this.setStepSound(Sounds.cow);
+    }
+
+    @Override
+    public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+        list.add(new ItemStack(item, 1, EnumType.blockRawBeef.getMeta()));
+        list.add(new ItemStack(item, 1, EnumType.blockCookedBeef.getMeta()));
     }
 
     @Override
@@ -35,33 +39,50 @@ public class BlockBeef extends BlockFergo {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((EnumType) state.getValue(VARIANT)).ordinal();
+        return ((EnumType) state.getValue(VARIANT)).getMeta();
     }
 
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[]{VARIANT});
+    public BlockState createBlockState() {
+        return new BlockState(this, VARIANT);
     }
 
     @Override
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
-        list.add(new ItemStack(itemIn, 1, EnumType.blockRawBeef.ordinal()));
-        list.add(new ItemStack(itemIn, 1, EnumType.blockCookedBeef.ordinal()));
+    public Item getItem(World worldIn, BlockPos pos) {
+        return Item.getItemFromBlock(this);
+    }
+
+    @Override
+    public int damageDropped(IBlockState state) {
+        return ((EnumType)state.getValue(VARIANT)).getMeta();
     }
 
     public static enum EnumType implements IStringSerializable
     {
-        blockRawBeef,
-        blockCookedBeef;
+        blockRawBeef(0, "blockRawBeef"),
+        blockCookedBeef(1, "blockCookedBeef");
 
-        @Override
-        public String getName() {
-            return this.name();
+        private int meta;
+        private String name;
+
+        private EnumType(int meta, String name)
+        {
+            this.meta = meta;
+            this.name = name;
+        }
+
+        public String getName()
+        {
+            return name;
         }
 
         @Override
         public String toString() {
-            return getName();
+            return this.getName();
+        }
+
+        public int getMeta() {
+            return meta;
         }
     }
 }

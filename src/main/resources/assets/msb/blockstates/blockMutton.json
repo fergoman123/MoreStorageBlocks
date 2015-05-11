@@ -1,0 +1,6 @@
+{
+  "variants":{
+    "variant=blockrawmutton": {"model": "msb:blockRawMutton"},
+    "variant=blockcookedmutton": {"model": "msb:blockCookedMutton"}
+  }
+}

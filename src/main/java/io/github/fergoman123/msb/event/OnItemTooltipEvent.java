@@ -27,8 +27,9 @@ public class OnItemTooltipEvent
 
         if (block != null) {
             if (block instanceof BlockMSB) {
+            BlockMSB blockMSB = (BlockMSB)block;
                 evt.toolTip.add(NameHelper.translate(Locale.oreDictName));
-                evt.toolTip.add(NameHelper.getUnlocalizedName(block.getUnlocalizedName(), 5));
+                evt.toolTip.add(blockMSB.getName());
             }
 
             if (block instanceof BlockGoldApple)

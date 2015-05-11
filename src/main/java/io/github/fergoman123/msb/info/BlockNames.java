@@ -47,4 +47,8 @@ public class BlockNames
     public static final String blockGhastTear = "blockGhastTear";
     public static final String blockSkullName = "blockSkull";
     public static final String[] blockSkull = {"blockSkullSkeleton", "blockSkullWither", "blockSkullZombie", "blockSkullCreeper"};
+    public static final String blockMuttonName = "blockMutton";
+    public static final String[] blockMutton = {"blockRawMutton", "blockCookedMutton"};
+    public static final String blockRabbitName = "blockRabbit";
+    public static final String[] blockRabbit = {"blockRawRabbit", "blockCookedRabbit"};
 }

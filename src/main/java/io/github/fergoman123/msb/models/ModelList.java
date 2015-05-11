@@ -1,68 +1,64 @@
 package io.github.fergoman123.msb.models;
 
-import io.github.fergoman123.fergoutil.model.BlockModel;
-import io.github.fergoman123.msb.info.BlockNames;
-import io.github.fergoman123.msb.info.ModInfo;
+import io.github.fergoman123.fergoutil.model.ModelHelper.BlockModel;
+import io.github.fergoman123.msb.api.ModelResLocMSB;
+import io.github.fergoman123.msb.info.Assets.Models;
 import io.github.fergoman123.msb.init.ModBlocks;
 import net.minecraft.block.Block;
 
 public class ModelList
 {
-    public static final BlockModel blockCharcoal = getBlockModel(ModBlocks.blockCharcoal, BlockNames.blockCharcoal);
-    public static final BlockModel blockApple = getBlockModel(ModBlocks.blockApple, BlockNames.blockApple);
-    public static final BlockModel[] blockGoldApple = getBlockModelArray(ModBlocks.blockGoldApple, BlockNames.blockGoldApple);
-    public static final BlockModel blockBook = getBlockModel(ModBlocks.blockBook, BlockNames.blockBook);
-    public static final BlockModel blockEgg = getBlockModel(ModBlocks.blockEgg, BlockNames.blockEgg);
-    public static final BlockModel blockEnderPearl = getBlockModel(ModBlocks.blockEnderPearl, BlockNames.blockEnderPearl);
-    public static final BlockModel blockEnderEye = getBlockModel(ModBlocks.blockEnderEye, BlockNames.blockEnderEye);
-    public static final BlockModel blockLead = getBlockModel(ModBlocks.blockLead, BlockNames.blockLead);
-    public static final BlockModel blockReed = getBlockModel(ModBlocks.blockReed, BlockNames.blockReed);
-    public static final BlockModel[] blockSeeds = getBlockModelArray(ModBlocks.blockSeeds, BlockNames.blockSeeds);
-    public static final BlockModel blockStick = getBlockModel(ModBlocks.blockStick, BlockNames.blockStick);
-    public static final BlockModel blockLeather = getBlockModel(ModBlocks.blockLeather, BlockNames.blockLeather);
-    public static final BlockModel blockBucket = getBlockModel(ModBlocks.blockBucket, BlockNames.blockBucket);
-    public static final BlockModel[] blockDye = getBlockModelArray(ModBlocks.blockDye, BlockNames.blockDye);
-    public static final BlockModel blockFireball = getBlockModel(ModBlocks.blockFireball, BlockNames.blockFireball);
-    public static final BlockModel blockSlimeball = getBlockModel(ModBlocks.blockSlimeball, BlockNames.blockSlimeball);
-    public static final BlockModel blockRottenFlesh = getBlockModel(ModBlocks.blockRottenFlesh, BlockNames.blockRottenFlesh);
-    public static final BlockModel blockPotato = getBlockModel(ModBlocks.blockPotato, BlockNames.blockPotato);
-    public static final BlockModel blockNetherWart = getBlockModel(ModBlocks.blockNetherWart, BlockNames.blockNetherWart);
-    public static final BlockModel blockGunpowder = getBlockModel(ModBlocks.blockGunpowder, BlockNames.blockGunpowder);
-    public static final BlockModel blockCarrot = getBlockModel(ModBlocks.blockCarrot, BlockNames.blockCarrot);
-    public static final BlockModel blockArrow = getBlockModel(ModBlocks.blockArrow, BlockNames.blockArrow);
-    public static final BlockModel blockBlazeRod = getBlockModel(ModBlocks.blockBlazeRod, BlockNames.blockBlazeRod);
-    public static final BlockModel blockFlint = getBlockModel(ModBlocks.blockFlint, BlockNames.blockFlint);
-    public static final BlockModel blockBone = getBlockModel(ModBlocks.blockBone, BlockNames.blockBone);
-    public static final BlockModel blockSugar = getBlockModel(ModBlocks.blockSugar, BlockNames.blockSugar);
-    public static final BlockModel blockNetherStar = getBlockModel(ModBlocks.blockNetherStar, BlockNames.blockNetherStar);
-    public static final BlockModel blockClay = getBlockModel(ModBlocks.blockClay, BlockNames.blockClay);
-    public static final BlockModel blockString = getBlockModel(ModBlocks.blockString, BlockNames.blockString);
-    public static final BlockModel blockFeather = getBlockModel(ModBlocks.blockFeather, BlockNames.blockFeather);
-    public static final BlockModel blockBread = getBlockModel(ModBlocks.blockBread, BlockNames.blockBread);
-    public static final BlockModel[] blockPorkchop = getBlockModelArray(ModBlocks.blockPorkchop, BlockNames.blockPorkchop);
-    public static final BlockModel[] blockFish = getBlockModelArray(ModBlocks.blockFish, BlockNames.blockFish);
-    public static final BlockModel blockCookie = getBlockModel(ModBlocks.blockCookie, BlockNames.blockCookie);
-    public static final BlockModel[] blockBeef = getBlockModelArray(ModBlocks.blockBeef, BlockNames.blockBeef);
-    public static final BlockModel blockPumpkinPie = getBlockModel(ModBlocks.blockPumpkinPie, BlockNames.blockPumpkinPie);
-    public static final BlockModel blockGhastTear = getBlockModel(ModBlocks.blockGhastTear, BlockNames.blockGhastTear);
-    public static final BlockModel[] blockSkull = getBlockModelArray(ModBlocks.blockSkull, BlockNames.blockSkull);
+    public static final BlockModel blockCharcoal = getModel(ModBlocks.blockCharcoal, Models.blockCharcoal);
+    public static final BlockModel blockApple = getModel(ModBlocks.blockApple, Models.blockApple);
+    public static final BlockModel[] blockGoldApple = getModelArray(ModBlocks.blockGoldApple, Models.blockGoldApple);
+    public static final BlockModel blockBook = getModel(ModBlocks.blockBook, Models.blockBook);
+    public static final BlockModel blockEgg = getModel(ModBlocks.blockEgg, Models.blockEgg);
+    public static final BlockModel blockEnderPearl = getModel(ModBlocks.blockEnderPearl, Models.blockEnderPearl);
+    public static final BlockModel blockEnderEye = getModel(ModBlocks.blockEnderEye, Models.blockEnderEye);
+    public static final BlockModel blockLead = getModel(ModBlocks.blockLead, Models.blockLead);
+    public static final BlockModel blockReed = getModel(ModBlocks.blockReed, Models.blockReed);
+    public static final BlockModel[] blockSeeds = getModelArray(ModBlocks.blockSeeds, Models.blockSeeds);
+    public static final BlockModel blockStick = getModel(ModBlocks.blockStick, Models.blockStick);
+    public static final BlockModel blockLeather = getModel(ModBlocks.blockLeather, Models.blockLeather);
+    public static final BlockModel blockBucket = getModel(ModBlocks.blockBucket, Models.blockBucket);
+    public static final BlockModel[] blockDye = getModelArray(ModBlocks.blockDye, Models.blockDye);
+    public static final BlockModel blockFireball = getModel(ModBlocks.blockFireball, Models.blockFireball);
+    public static final BlockModel blockSlimeball = getModel(ModBlocks.blockSlimeball, Models.blockSlimeball);
+    public static final BlockModel blockRottenFlesh = getModel(ModBlocks.blockRottenFlesh, Models.blockRottenFlesh);
+    public static final BlockModel blockPotato = getModel(ModBlocks.blockPotato, Models.blockPotato);
+    public static final BlockModel blockNetherWart = getModel(ModBlocks.blockNetherWart, Models.blockNetherWart);
+    public static final BlockModel blockGunpowder = getModel(ModBlocks.blockGunpowder, Models.blockGunpowder);
+    public static final BlockModel blockCarrot = getModel(ModBlocks.blockCarrot, Models.blockCarrot);
+    public static final BlockModel blockArrow = getModel(ModBlocks.blockArrow, Models.blockArrow);
+    public static final BlockModel blockBlazeRod = getModel(ModBlocks.blockBlazeRod, Models.blockBlazeRod);
+    public static final BlockModel blockFlint = getModel(ModBlocks.blockFlint, Models.blockFlint);
+    public static final BlockModel blockBone = getModel(ModBlocks.blockBone, Models.blockBone);
+    public static final BlockModel blockSugar = getModel(ModBlocks.blockSugar, Models.blockSugar);
+    public static final BlockModel blockNetherStar = getModel(ModBlocks.blockNetherStar, Models.blockNetherStar);
+    public static final BlockModel blockClay = getModel(ModBlocks.blockClay, Models.blockClay);
+    public static final BlockModel blockString = getModel(ModBlocks.blockString, Models.blockString);
+    public static final BlockModel blockFeather = getModel(ModBlocks.blockFeather, Models.blockFeather);
+    public static final BlockModel blockBread = getModel(ModBlocks.blockBread, Models.blockBread);
+    public static final BlockModel[] blockPorkchop = getModelArray(ModBlocks.blockPorkchop, Models.blockPorkchop);
+    public static final BlockModel[] blockFish = getModelArray(ModBlocks.blockFish, Models.blockFish);
+    public static final BlockModel blockCookie = getModel(ModBlocks.blockCookie, Models.blockCookie);
+    public static final BlockModel[] blockBeef = getModelArray(ModBlocks.blockBeef, Models.blockBeef);
+    public static final BlockModel blockPumpkinPie = getModel(ModBlocks.blockPumpkinPie, Models.blockPumpkinPie);
+    public static final BlockModel blockGhastTear = getModel(ModBlocks.blockGhastTear, Models.blockGhastTear);
+    public static final BlockModel[] blockSkull = getModelArray(ModBlocks.blockSkull, Models.blockSkull);
+    public static final BlockModel[] blockMutton = getModelArray(ModBlocks.blockMutton, Models.blockMutton);
+    public static final BlockModel[] blockRabbit = getModelArray(ModBlocks.blockRabbit, Models.blockRabbit);
 
-    public static BlockModel getBlockModel(Block block, int meta, String name)
+    public static BlockModel getModel(Block block, ModelResLocMSB model)
     {
-        return new BlockModel(block, meta, ModInfo.modid.toLowerCase() + ":" + name);
+        return new BlockModel(block, model);
     }
 
-    public static BlockModel getBlockModel(Block block, String name)
+    public static BlockModel[] getModelArray(Block block, ModelResLocMSB[] models)
     {
-        return new BlockModel(block, ModInfo.modid.toLowerCase() + ":" + name);
-    }
-
-    public static BlockModel[] getBlockModelArray(Block block, String[] names)
-    {
-        BlockModel[] blockModels = new BlockModel[names.length];
-        for (int i = 0; i < blockModels.length; i++)
-        {
-            blockModels[i] = getBlockModel(block, i, names[i]);
+        BlockModel[] blockModels = new BlockModel[models.length];
+        for (int i = 0; i < blockModels.length; i++) {
+            blockModels[i] = new BlockModel(block, i, models[i]);
         }
         return blockModels;
     }

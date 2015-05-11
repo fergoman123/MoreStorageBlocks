@@ -26,7 +26,7 @@ task("incrementBuildNumber")
         {
             //increment build number
             doFirst{
-                        config.build_number = (config.build_number.toString()) + 1
+                        config.build_number = (config.build_number.toString().toInteger()) + 1
 
                         configFile.withWriter{
                                     config.toProperties().store(it, "")
@@ -50,12 +50,13 @@ archivesBaseName = "MoreStorageBlocks"
 minecraft {
     version = config.minecraft_version + "-" + config.forge_version
     runDir = "run/assets"
+    mappings = "${config.mapping}"
 }
 
 version = "${config.minecraft_version}-${config.mod_version}.${config.build_number}"
 
 dependencies {
-    compile "${config.dep}"
+    compile "io.github.fergoman123:FergoUtil:${config.minecraft_version}-${config.fu_version}:dev"
 }
 
 jar {

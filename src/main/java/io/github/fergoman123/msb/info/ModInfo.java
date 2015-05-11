@@ -7,8 +7,8 @@ public class ModInfo
 {
     public static final String modid = "MSB";
     public static final String name = "More Storage Blocks";
-    public static final String mcVersion = "1.8.0";
-    public static final String version = "1.0.0";
+    public static final String mcVersion = "1.8";
+    public static final String version = mcVersion + "-" + "1.0";
     public static final List<String> authorList = Arrays.asList("Fergoman123");
     public static final String url = "fergoman123.github.io";
     public static final String updateUrl = "fergoman123.github.io/msb";
