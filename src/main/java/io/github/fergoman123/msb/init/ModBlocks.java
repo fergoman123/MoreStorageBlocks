@@ -1,10 +1,15 @@
 package io.github.fergoman123.msb.init;
 
 import io.github.fergoman123.fergoutil.item.ItemBlockVariants;
+import io.github.fergoman123.fergoutil.model.ModelHelper;
 import io.github.fergoman123.msb.api.BlockMSB;
+import io.github.fergoman123.msb.api.ModelResLocMSB;
+import io.github.fergoman123.msb.api.VariantNameMSB;
 import io.github.fergoman123.msb.common.blocks.*;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.Block;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -95,6 +100,11 @@ public class ModBlocks
         registerBlock(blockRabbit, ItemBlockVariants.class, BlockNames.blockRabbitName);
     }
 
+    public static void registerModels()
+    {
+
+    }
+
     public static void registerBlock(Block block, String name)
     {
         GameRegistry.registerBlock(block, name);
@@ -103,5 +113,16 @@ public class ModBlocks
     public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlock, String name)
     {
         GameRegistry.registerBlock(block, itemBlock, name);
+    }
+
+    public static void registerModel(Block block, int meta, String name)
+    {
+        ModelHelper.getItemModelMesher().register(Item.getItemFromBlock(block), meta, new ModelResLocMSB(name));
+        ModelBakery.addVariantName(Item.getItemFromBlock(block), new VariantNameMSB(name).getFullName());
+    }
+
+    public static void registerModel(Block block, String name)
+    {
+        registerModel(block, 0, name);
     }
 }

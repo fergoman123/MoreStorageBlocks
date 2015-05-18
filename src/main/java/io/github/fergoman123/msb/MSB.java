@@ -1,7 +1,6 @@
 package io.github.fergoman123.msb;
 
 import io.github.fergoman123.fergoutil.proxy.IProxy;
-import io.github.fergoman123.msb.common.ModelRegister;
 import io.github.fergoman123.msb.common.OreDictRegistry;
 import io.github.fergoman123.msb.info.Locale;
 import io.github.fergoman123.msb.info.MetadataMSB;
@@ -41,8 +40,6 @@ public class MSB
     public void load(FMLInitializationEvent evt)
     {
         ModBlocks.register();
-        ModelRegister.registerModels();
-        ModelRegister.registerVariants();
         Recipes.init();
         OreDictRegistry.init();
         proxy.registerEventHandlers();
