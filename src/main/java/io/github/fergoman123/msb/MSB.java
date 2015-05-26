@@ -34,12 +34,13 @@ public class MSB
     public void preInit(FMLPreInitializationEvent evt)
     {
         MetadataMSB.writeMetadata(evt.getModMetadata());
+        ModBlocks.addBlocks();
     }
 
     @EventHandler
     public void load(FMLInitializationEvent evt)
     {
-        ModBlocks.register();
+        ModBlocks.registerBlocks();
         Recipes.init();
         OreDictRegistry.init();
         proxy.registerEventHandlers();
@@ -48,7 +49,7 @@ public class MSB
     @EventHandler
     public void modsLoaded(FMLPostInitializationEvent evt)
     {
-
+        getLogger().info("More Storage Blocks Loaded");
     }
 
     public static Logger getLogger()

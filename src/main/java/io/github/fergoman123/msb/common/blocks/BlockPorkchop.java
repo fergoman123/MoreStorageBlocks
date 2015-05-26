@@ -2,6 +2,7 @@ package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.msb.api.BlockMultiMSB;
 import io.github.fergoman123.msb.info.BlockNames;
+import io.github.fergoman123.msb.init.Sounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -26,7 +27,7 @@ public class BlockPorkchop extends BlockMultiMSB
     {
         super(Material.iron, BlockNames.blockPorkchop, BlockNames.blockPorkchopName);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockRawPorkchop));
-        this.setStepSound(Block.soundTypeMetal);
+        this.setStepSound(Sounds.pig);
     }
 
     @Override
