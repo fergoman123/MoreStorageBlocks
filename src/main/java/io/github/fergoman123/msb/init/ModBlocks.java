@@ -1,8 +1,6 @@
 package io.github.fergoman123.msb.init;
 
-import io.github.fergoman123.fergoutil.helper.ItemStackHelper;
 import io.github.fergoman123.fergoutil.item.ItemBlockVariants;
-import io.github.fergoman123.fergoutil.model.ModelHelper;
 import io.github.fergoman123.msb.api.BlockMSB;
 import io.github.fergoman123.msb.api.ModelResLocMSB;
 import io.github.fergoman123.msb.api.VariantNameMSB;
