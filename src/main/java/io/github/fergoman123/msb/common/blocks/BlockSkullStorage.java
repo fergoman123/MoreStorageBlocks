@@ -2,8 +2,7 @@ package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.fergoutil.block.BlockFergo;
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.info.BlockNames;
-import net.minecraft.block.material.Material;
+import io.github.fergoman123.msb.info.BlockInfos;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
@@ -22,7 +21,7 @@ public class BlockSkullStorage extends BlockMultiMSB
 
     public BlockSkullStorage()
     {
-        super(Material.iron, BlockNames.blockSkull, BlockNames.blockSkullName);
+        super(BlockInfos.blockSkull);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockSkullSkeleton));
         this.setStepSound(BlockFergo.soundTypeMetal);
     }

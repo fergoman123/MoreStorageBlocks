@@ -1,9 +1,8 @@
 package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.info.BlockNames;
+import io.github.fergoman123.msb.info.BlockInfos;
 import io.github.fergoman123.msb.init.Sounds;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
@@ -21,7 +20,7 @@ public class BlockBeef extends BlockMultiMSB {
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumType.class);
 
     public BlockBeef() {
-        super(Material.iron, BlockNames.blockBeef, BlockNames.blockBeefName);
+        super(BlockInfos.blockBeef);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockRawBeef));
         this.setStepSound(Sounds.cow);
     }

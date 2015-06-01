@@ -1,9 +1,8 @@
 package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.info.BlockNames;
+import io.github.fergoman123.msb.info.BlockInfos;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
@@ -22,7 +21,7 @@ public class BlockFish extends BlockMultiMSB
 
     public BlockFish()
     {
-        super(Material.iron, BlockNames.blockFish, BlockNames.blockFishName);
+        super(BlockInfos.blockFish);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockRawFish));
         this.setStepSound(Block.soundTypeMetal);
     }
@@ -62,7 +61,7 @@ public class BlockFish extends BlockMultiMSB
         list.add(new ItemStack(item, 1, EnumType.blockCookedSalmon.getMeta()));
     }
 
-    public enum EnumType implements IStringSerializable
+    public static enum EnumType implements IStringSerializable
     {
         blockRawFish,
         blockRawSalmon,

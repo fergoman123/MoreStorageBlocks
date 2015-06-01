@@ -1,8 +1,7 @@
 package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.info.BlockNames;
-import net.minecraft.block.material.Material;
+import io.github.fergoman123.msb.info.BlockInfos;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
@@ -21,7 +20,7 @@ public class BlockGoldApple extends BlockMultiMSB
 
     public BlockGoldApple()
     {
-        super(Material.iron, BlockNames.blockGoldApple, BlockNames.blockGoldAppleName);
+        super(BlockInfos.blockGoldApple);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockGoldApple1));
     }
 

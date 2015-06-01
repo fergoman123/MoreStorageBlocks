@@ -4,7 +4,6 @@ import io.github.fergoman123.fergoutil.block.BlockFergo;
 import io.github.fergoman123.fergoutil.info.BlockInfo;
 import io.github.fergoman123.msb.MSB;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 
 public class BlockMSB extends BlockFergo
 {
