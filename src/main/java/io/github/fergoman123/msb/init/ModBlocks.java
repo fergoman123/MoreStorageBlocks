@@ -3,7 +3,6 @@ package io.github.fergoman123.msb.init;
 import io.github.fergoman123.msb.api.BlockMSB;
 import io.github.fergoman123.msb.api.BlockMultiMSB;
 import io.github.fergoman123.msb.common.blocks.*;
-import io.github.fergoman123.msb.info.BlockInfos;
 
 import static io.github.fergoman123.fergoutil.helper.RegisterHelper.registerBlock;
 

@@ -1,7 +1,6 @@
 package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.info.BlockInfos;
 import io.github.fergoman123.msb.init.Sounds;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
@@ -51,15 +50,9 @@ public class BlockRabbit extends BlockMultiMSB
         return ((EnumType)state.getValue(VARIANT)).ordinal();
     }
 
-    @Override
-    public void getSubBlocks(Item item, CreativeTabs tab, List list) {
-        list.add(new ItemStack(item, 1, EnumType.blockRawRabbit.getMeta()));
-        list.add(new ItemStack(item, 1, EnumType.blockCookedRabbit.getMeta()));
-    }
-
     public enum EnumType implements IStringSerializable
     {
-        blockRawRabbit,
+        blockRawRabbit(0, "blockRawRabbit"),
         blockCookedRabbit;
 
         @Override
