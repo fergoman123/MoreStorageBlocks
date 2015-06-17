@@ -1,43 +1,34 @@
 package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.msb.api.BlockMultiMSB;
+import io.github.fergoman123.msb.enums.BeefType;
+import io.github.fergoman123.msb.info.BlockNames;
 import io.github.fergoman123.msb.init.Sounds;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class BlockBeef extends BlockMultiMSB {
 
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumType.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", BeefType.class);
 
     public BlockBeef() {
-        super(BlockInfos.blockBeef);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockRawBeef));
+        super(BlockNames.blockBeef, BlockNames.blockBeefName);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BeefType.blockRawBeef));
         this.setStepSound(Sounds.cow);
     }
 
     @Override
-    public void getSubBlocks(Item item, CreativeTabs tab, List list) {
-        list.add(new ItemStack(item, 1, EnumType.blockRawBeef.getMeta()));
-        list.add(new ItemStack(item, 1, EnumType.blockCookedBeef.getMeta()));
-    }
-
-    @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, EnumType.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, BeefType.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((EnumType) state.getValue(VARIANT)).getMeta();
+        return ((BeefType) state.getValue(VARIANT)).getMeta();
     }
 
     @Override
@@ -52,35 +43,6 @@ public class BlockBeef extends BlockMultiMSB {
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((EnumType)state.getValue(VARIANT)).getMeta();
-    }
-
-    public static enum EnumType implements IStringSerializable
-    {
-        blockRawBeef(0, "blockRawBeef"),
-        blockCookedBeef(1, "blockCookedBeef");
-
-        private int meta;
-        private String name;
-
-        private EnumType(int meta, String name)
-        {
-            this.meta = meta;
-            this.name = name;
-        }
-
-        public String getName()
-        {
-            return name;
-        }
-
-        @Override
-        public String toString() {
-            return this.getName();
-        }
-
-        public int getMeta() {
-            return meta;
-        }
+        return ((BeefType)state.getValue(VARIANT)).getMeta();
     }
 }

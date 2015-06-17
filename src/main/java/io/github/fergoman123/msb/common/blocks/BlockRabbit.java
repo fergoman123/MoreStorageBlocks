@@ -1,38 +1,35 @@
 package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.msb.api.BlockMultiMSB;
+import io.github.fergoman123.msb.enums.RabbitType;
+import io.github.fergoman123.msb.info.BlockNames;
 import io.github.fergoman123.msb.init.Sounds;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class BlockRabbit extends BlockMultiMSB
 {
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumType.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", RabbitType.class);
 
     public BlockRabbit()
     {
-        super(BlockInfos.blockRabbit);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockRawRabbit));
+        super(BlockNames.blockRabbit, BlockNames.blockRabbitName);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, RabbitType.blockRawRabbit));
         this.setStepSound(Sounds.rabbit);
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, EnumType.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, RabbitType.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((EnumType)state.getValue(VARIANT)).ordinal();
+        return ((RabbitType)state.getValue(VARIANT)).ordinal();
     }
 
     @Override
@@ -47,27 +44,6 @@ public class BlockRabbit extends BlockMultiMSB
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((EnumType)state.getValue(VARIANT)).ordinal();
-    }
-
-    public enum EnumType implements IStringSerializable
-    {
-        blockRawRabbit(0, "blockRawRabbit"),
-        blockCookedRabbit;
-
-        @Override
-        public String getName() {
-            return this.name();
-        }
-
-        @Override
-        public String toString() {
-            return getName();
-        }
-
-        public int getMeta()
-        {
-            return this.ordinal();
-        }
+        return ((RabbitType)state.getValue(VARIANT)).ordinal();
     }
 }

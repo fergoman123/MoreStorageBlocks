@@ -1,5 +1,5 @@
 {
-    "parent": "msb:block/blockCookedPorkchop",
+    "parent": "msb:block/blockCharcoal",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

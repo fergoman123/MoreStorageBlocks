@@ -45,6 +45,7 @@ public class MSB
         Recipes.init();
         OreDictRegistry.init();
         proxy.registerEventHandlers();
+        proxy.registerRenderers();
     }
 
     @EventHandler

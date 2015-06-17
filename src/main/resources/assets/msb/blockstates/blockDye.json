@@ -12,7 +12,7 @@
     "variant=blocklimedye":{"model":"msb:blockLimeDye"},
     "variant=blockyellowdye":{"model":"msb:blockYellowDye"},
     "variant=blocklightbluedye":{"model":"msb:blockLightBlueDye"},
-    "variant=blockmagentadye":{"model":"msb:blockMagentaDye"},
+    "variant=blockmegentadye":{"model":"msb:blockMagentaDye"},
     "variant=blockorangedye":{"model":"msb:blockOrangeDye"},
     "variant=blockwhitedye":{"model":"msb:blockWhiteDye"}
   }
