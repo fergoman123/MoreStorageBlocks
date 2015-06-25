@@ -7,6 +7,7 @@ import io.github.fergoman123.msb.info.MetadataMSB;
 import io.github.fergoman123.msb.info.ModInfo;
 import io.github.fergoman123.msb.info.Reference;
 import io.github.fergoman123.msb.init.ModBlocks;
+import io.github.fergoman123.msb.init.ModelRegister;
 import io.github.fergoman123.msb.init.Recipes;
 import io.github.fergoman123.msb.log.LoggerMSB;
 import io.github.fergoman123.msb.tab.CreativeTabMSB;
@@ -24,6 +25,7 @@ public class MSB
 {
     public static final CreativeTabMSB tabMSB = new CreativeTabMSB(Locale.tabMSB);
     private static final LoggerMSB logger = new LoggerMSB();
+    private ModelRegister modelRegister = new ModelRegister();
 
     @Instance(ModInfo.modid)
     public static MSB instance;
@@ -57,5 +59,9 @@ public class MSB
     public static Logger getLogger()
     {
         return logger.getLogger();
+    }
+
+    public ModelRegister getModelRegister() {
+        return modelRegister;
     }
 }
