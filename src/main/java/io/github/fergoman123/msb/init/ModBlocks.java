@@ -1,8 +1,11 @@
 package io.github.fergoman123.msb.init;
 
+import io.github.fergoman123.fergoutil.helper.RegisterHelper;
 import io.github.fergoman123.fergoutil.item.ItemBlockVariants;
+import io.github.fergoman123.fergoutil.model.ModelVariant;
 import io.github.fergoman123.msb.api.BlockMSB;
 import io.github.fergoman123.msb.api.BlockMultiMSB;
+import io.github.fergoman123.msb.api.ModelVariantMSB;
 import io.github.fergoman123.msb.common.blocks.*;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.Block;
@@ -106,7 +109,7 @@ public class ModBlocks
         registerBlock(blockEnderEye, BlockNames.blockEnderEye, false);
         registerBlock(blockLead, BlockNames.blockLead, false);
         registerBlock(blockReed, BlockNames.blockReed, false);
-        registerBlock(blockSeeds, BlockNames.blockSeedsName, false);
+        registerBlock(blockSeeds, BlockNames.blockSeedsName, true);
         registerBlock(blockStick, BlockNames.blockStick, false);
         registerBlock(blockLeather, BlockNames.blockLeather, false);
         registerBlock(blockBucket, BlockNames.blockBucket, false);
@@ -137,6 +140,55 @@ public class ModBlocks
         registerBlock(blockSkull, BlockNames.blockSkullName, true);
         registerBlock(blockMutton, BlockNames.blockMuttonName, true);
         registerBlock(blockRabbit, BlockNames.blockRabbitName, true);
+    }
+
+    public static void addVariants()
+    {
+        RegisterHelper.addVariant(new ModelVariantMSB(blockCharcoal, BlockNames.blockCharcoal));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockApple, BlockNames.blockApple));
+        ModelVariantMSB[] blockGoldAppleVariant = new ModelVariantMSB[BlockNames.blockGoldApple.length];
+        for (int i = 0; i < blockGoldAppleVariant.length; i++) {
+            blockGoldAppleVariant[i] = new ModelVariantMSB(blockGoldApple, BlockNames.blockGoldApple[i]);
+            RegisterHelper.addVariant(blockGoldAppleVariant[i]);
+        }
+        RegisterHelper.addVariant(new ModelVariantMSB(blockBook, BlockNames.blockBook));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockEgg, BlockNames.blockEgg));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockEnderPearl, BlockNames.blockEnderPearl));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockEnderEye, BlockNames.blockEnderEye));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockLead, BlockNames.blockLead));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockReed, BlockNames.blockReed));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockSeeds, BlockNames.blockSeedsName));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockStick, BlockNames.blockStick));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockLeather, BlockNames.blockLeather));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockBucket, BlockNames.blockBucket));
+        ModelVariantMSB[] blockDyeVariant = new ModelVariantMSB[BlockNames.blockDye.length];
+        RegisterHelper.addVariant(new ModelVariantMSB(blockDye, BlockNames.blockDyeName, true);
+        RegisterHelper.addVariant(new ModelVariantMSB(blockFireball, BlockNames.blockFireball));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockSlimeball, BlockNames.blockSlimeball));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockRottenFlesh, BlockNames.blockRottenFlesh));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockPotato, BlockNames.blockPotato));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockNetherWart, BlockNames.blockNetherWart));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockGunpowder, BlockNames.blockGunpowder));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockCarrot, BlockNames.blockCarrot));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockArrow, BlockNames.blockArrow));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockBlazeRod, BlockNames.blockBlazeRod));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockFlint, BlockNames.blockFlint));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockBone, BlockNames.blockBone));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockSugar, BlockNames.blockSugar));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockNetherStar, BlockNames.blockNetherStar));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockClay, BlockNames.blockClay));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockString, BlockNames.blockString));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockFeather, BlockNames.blockFeather));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockBread, BlockNames.blockBread));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockPorkchop, BlockNames.blockPorkchopName, true);
+        RegisterHelper.addVariant(new ModelVariantMSB(blockFish, BlockNames.blockFishName, true);
+        RegisterHelper.addVariant(new ModelVariantMSB(blockCookie, BlockNames.blockCookie));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockBeef, BlockNames.blockBeefName, true);
+        RegisterHelper.addVariant(new ModelVariantMSB(blockPumpkinPie, BlockNames.blockPumpkinPie));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockGhastTear, BlockNames.blockGhastTear));
+        RegisterHelper.addVariant(new ModelVariantMSB(blockSkull, BlockNames.blockSkullName, true);
+        RegisterHelper.addVariant(new ModelVariantMSB(blockMutton, BlockNames.blockMuttonName, true);
+        RegisterHelper.addVariant(new ModelVariantMSB(blockRabbit, BlockNames.blockRabbitName, true);
     }
 
     public static void registerBlock(Block block, String name, boolean hasItemBlock){
