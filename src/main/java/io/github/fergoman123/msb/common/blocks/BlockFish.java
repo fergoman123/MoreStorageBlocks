@@ -1,6 +1,7 @@
 package io.github.fergoman123.msb.common.blocks;
 
 import io.github.fergoman123.msb.api.BlockMultiMSB;
+import io.github.fergoman123.msb.enums.BlockFishType;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyEnum;

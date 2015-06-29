@@ -51,4 +51,24 @@ public class BlockNames
     public static final String[] blockMutton = {"blockRawMutton", "blockCookedMutton"};
     public static final String blockRabbitName = "blockRabbit";
     public static final String[] blockRabbit = {"blockRawRabbit", "blockCookedRabbit"};
+
+    public static final class ItemNames
+    {
+        public static final String[] skullNames =
+                {
+                        "skullBat",
+                        "skullChicken",
+                        "skullCow",
+                        "skullOcelot",
+                        "skullPig",
+                        "skullRabbit",
+                        "skullEnderman",
+                        "skullZombiePigman",
+                        "skullBlaze"
+                };
+
+        public static final String itemSkullMSB = "itemSkullMSB";
+        public static final String blockSkullMSB = "blockSkullMSB";
+
+    }
 }

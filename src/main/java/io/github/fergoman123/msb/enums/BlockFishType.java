@@ -1,4 +1,4 @@
-package io.github.fergoman123.msb.common.blocks;
+package io.github.fergoman123.msb.enums;
 
 import net.minecraft.util.IStringSerializable;
 

@@ -6,17 +6,19 @@ import io.github.fergoman123.msb.common.blocks.*;
 import io.github.fergoman123.msb.info.BlockNames;
 import io.github.fergoman123.msb.info.Locale;
 import net.minecraft.block.Block;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.List;
+import java.util.Random;
 
-public class OnItemTooltipEvent
+public class MSBEventHandler
 {
-    public static final OnItemTooltipEvent instance = new OnItemTooltipEvent();
-
     @SubscribeEvent
     public void onItemTooltip(ItemTooltipEvent evt)
     {
@@ -27,7 +29,7 @@ public class OnItemTooltipEvent
 
         if (block != null) {
             if (block instanceof BlockMSB) {
-            BlockMSB blockMSB = (BlockMSB)block;
+                BlockMSB blockMSB = (BlockMSB)block;
                 evt.toolTip.add(NameHelper.translate(Locale.oreDictName));
                 evt.toolTip.add(NameHelper.translate(blockMSB.getUnlocalizedName().substring(blockMSB.getUnlocalizedName().indexOf(':') + 1)));
             }
@@ -204,6 +206,29 @@ public class OnItemTooltipEvent
                 }
             }
         }
+    }
 
+    @SubscribeEvent
+    public void onLivingDrops(LivingDropsEvent evt)
+    {
+        if (evt.entity instanceof EntitySheep)
+        {
+            EntitySheep sheep = (EntitySheep)evt.entity;
+            Random rand = new Random();
+            int chance = rand.nextInt(2);
+            if (chance == 1)
+            {
+                //todo drop sheep skull
+//                sheep.entityDropItem(new ItemStack())
+            }
+
+        }
+
+        if (evt.entity instanceof EntityPig)
+        {
+            EntityPig pig = (EntityPig)evt.entity;
+            //todo skull metadata
+//            ItemStack pigSkull = new ItemStack(skullItem, 1, skullMeta);
+        }
     }
 }
