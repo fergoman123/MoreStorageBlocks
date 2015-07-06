@@ -1,7 +1,9 @@
 package io.github.fergoman123.msb.common.blocks;
 
+import java.util.Random;
+
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.enums.BlockFishType;
+import io.github.fergoman123.msb.enums.EnumTypes;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyEnum;
@@ -13,23 +15,23 @@ import net.minecraft.world.World;
 
 public class BlockFish extends BlockMultiMSB
 {
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", BlockFishType.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumTypes.Fish.class);
 
     public BlockFish()
     {
         super(BlockNames.blockFish, BlockNames.blockFishName);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockFishType.blockRawFish));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumTypes.Fish.blockRawFish));
         this.setStepSound(Block.soundTypeMetal);
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, BlockFishType.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, EnumTypes.Fish.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((BlockFishType)state.getValue(VARIANT)).ordinal();
+        return ((EnumTypes.Fish)state.getValue(VARIANT)).ordinal();
     }
 
     @Override
@@ -44,7 +46,12 @@ public class BlockFish extends BlockMultiMSB
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((BlockFishType)state.getValue(VARIANT)).ordinal();
+        return ((EnumTypes.Fish)state.getValue(VARIANT)).ordinal();
     }
-
+    
+    @Override
+    public Item getItemDropped(IBlockState state, Random random, int fortune) {
+    	// TODO: fix this
+    	return null;
+    }
 }

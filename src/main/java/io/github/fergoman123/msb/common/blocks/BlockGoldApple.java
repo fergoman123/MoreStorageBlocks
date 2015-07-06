@@ -1,7 +1,9 @@
 package io.github.fergoman123.msb.common.blocks;
 
+import java.util.Random;
+
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.enums.GoldAppleType;
+import io.github.fergoman123.msb.enums.EnumTypes;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
@@ -12,22 +14,22 @@ import net.minecraft.world.World;
 
 public class BlockGoldApple extends BlockMultiMSB
 {
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", GoldAppleType.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumTypes.GoldApple.class);
 
     public BlockGoldApple()
     {
         super(BlockNames.blockGoldApple, BlockNames.blockGoldAppleName);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, GoldAppleType.blockGoldApple1));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumTypes.GoldApple.blockGoldApple1));
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, GoldAppleType.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, EnumTypes.GoldApple.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((GoldAppleType)state.getValue(VARIANT)).getMeta();
+        return ((EnumTypes.GoldApple)state.getValue(VARIANT)).getMeta();
     }
 
     @Override
@@ -42,6 +44,12 @@ public class BlockGoldApple extends BlockMultiMSB
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((GoldAppleType)state.getValue(VARIANT)).getMeta();
+        return ((EnumTypes.GoldApple)state.getValue(VARIANT)).getMeta();
     }
+
+	@Override
+	public Item getItemDropped(IBlockState state, Random random, int fortune) {
+		// TODO: fix this
+		return null;
+	}
 }

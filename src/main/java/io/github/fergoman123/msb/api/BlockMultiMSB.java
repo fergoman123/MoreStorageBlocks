@@ -13,13 +13,4 @@ public abstract class BlockMultiMSB extends BlockMultiFergo
         super(Material.iron, 1, MSB.tabMSB, 5f, 10f, subNames, name);
         this.setHarvestLevel("pickaxe", 1);
     }
-
-    public Block getBlock() {
-        return this;
-    }
-
-    @Override
-    public Class<? extends ItemBlockFergo> getItemBlock() {
-        return ItemBlockMetaFergo.class;
-    }
 }

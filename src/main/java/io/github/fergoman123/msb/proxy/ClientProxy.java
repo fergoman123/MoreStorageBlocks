@@ -15,8 +15,6 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerRenderers() {
-        ModelRegister.registerModels();
-        VariantRegister.registerVariants();
     }
 
     @Override

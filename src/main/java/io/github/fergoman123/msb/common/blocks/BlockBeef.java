@@ -1,7 +1,9 @@
 package io.github.fergoman123.msb.common.blocks;
 
+import java.util.Random;
+
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.enums.BeefType;
+import io.github.fergoman123.msb.enums.EnumTypes.Beef;
 import io.github.fergoman123.msb.info.BlockNames;
 import io.github.fergoman123.msb.init.Sounds;
 import net.minecraft.block.properties.PropertyEnum;
@@ -13,22 +15,22 @@ import net.minecraft.world.World;
 
 public class BlockBeef extends BlockMultiMSB {
 
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", BeefType.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", Beef.class);
 
     public BlockBeef() {
         super(BlockNames.blockBeef, BlockNames.blockBeefName);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BeefType.blockRawBeef));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, Beef.blockRawBeef));
         this.setStepSound(Sounds.cow);
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, BeefType.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, Beef.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((BeefType) state.getValue(VARIANT)).getMeta();
+        return ((Beef) state.getValue(VARIANT)).getMeta();
     }
 
     @Override
@@ -43,6 +45,12 @@ public class BlockBeef extends BlockMultiMSB {
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((BeefType)state.getValue(VARIANT)).getMeta();
+        return ((Beef)state.getValue(VARIANT)).getMeta();
+    }
+    
+    @Override
+    public Item getItemDropped(IBlockState state, Random random, int fortune) {
+    	// TODO fix this
+    	return null;
     }
 }

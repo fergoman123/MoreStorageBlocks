@@ -1,7 +1,9 @@
 package io.github.fergoman123.msb.common.blocks;
 
+import java.util.Random;
+
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.enums.PorkchopType;
+import io.github.fergoman123.msb.enums.EnumTypes;
 import io.github.fergoman123.msb.info.BlockNames;
 import io.github.fergoman123.msb.init.Sounds;
 import net.minecraft.block.properties.PropertyEnum;
@@ -15,12 +17,12 @@ import net.minecraft.world.World;
 
 public class BlockPorkchop extends BlockMultiMSB
 {
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", PorkchopType.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumTypes.Porkchop.class);
 
     public BlockPorkchop()
     {
         super(BlockNames.blockPorkchop, BlockNames.blockPorkchopName);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, PorkchopType.blockRawPorkchop));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumTypes.Porkchop.blockRawPorkchop));
         this.setStepSound(Sounds.pig);
     }
 
@@ -39,12 +41,12 @@ public class BlockPorkchop extends BlockMultiMSB
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, PorkchopType.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, EnumTypes.Porkchop.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((PorkchopType)state.getValue(VARIANT)).ordinal();
+        return ((EnumTypes.Porkchop)state.getValue(VARIANT)).ordinal();
     }
 
     @Override
@@ -59,6 +61,11 @@ public class BlockPorkchop extends BlockMultiMSB
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((PorkchopType)state.getValue(VARIANT)).ordinal();
+        return ((EnumTypes.Porkchop)state.getValue(VARIANT)).ordinal();
+    }
+    
+    @Override
+    public Item getItemDropped(IBlockState state, Random random, int fortune) {
+    	return Item.getItemFromBlock(this);
     }
 }

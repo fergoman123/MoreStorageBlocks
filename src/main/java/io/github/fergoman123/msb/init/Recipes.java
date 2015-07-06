@@ -1,6 +1,6 @@
 package io.github.fergoman123.msb.init;
 
-import io.github.fergoman123.msb.enums.DyeType;
+import io.github.fergoman123.msb.enums.EnumTypes;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -26,7 +26,7 @@ public class Recipes {
         addStorageBlockRecipe(new ItemStack(ModBlocks.blockSeeds, 1, 2), new ItemStack(Items.melon_seeds));
         addStorageBlockRecipe(new ItemStack(ModBlocks.blockStick), new ItemStack(Items.stick));
         addStorageBlockRecipe(new ItemStack(ModBlocks.blockLeather), new ItemStack(Items.leather));
-        for (int i = 0; i < DyeType.values().length; i++) {
+        for (int i = 0; i < EnumTypes.Dye.values().length; i++) {
             int[] dyedamage = new int[]{0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
             addStorageBlockRecipe(new ItemStack(ModBlocks.blockDye, 1, i), new ItemStack(Items.dye, 1, dyedamage[i]));
         }

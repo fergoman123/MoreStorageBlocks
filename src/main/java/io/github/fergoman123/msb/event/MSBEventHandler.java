@@ -30,8 +30,8 @@ public class MSBEventHandler
         if (block != null) {
             if (block instanceof BlockMSB) {
                 BlockMSB blockMSB = (BlockMSB)block;
-                evt.toolTip.add(NameHelper.translate(Locale.oreDictName));
-                evt.toolTip.add(NameHelper.translate(blockMSB.getUnlocalizedName().substring(blockMSB.getUnlocalizedName().indexOf(':') + 1)));
+                toolTip.add(NameHelper.translate(Locale.oreDictName));
+                toolTip.add(NameHelper.translate(blockMSB.getUnlocalizedName().substring(blockMSB.getUnlocalizedName().indexOf(':') + 1)));
             }
 
             if (block instanceof BlockGoldApple)
@@ -205,30 +205,6 @@ public class MSBEventHandler
                     toolTip.add(BlockNames.blockSkull[3]);
                 }
             }
-        }
-    }
-
-    @SubscribeEvent
-    public void onLivingDrops(LivingDropsEvent evt)
-    {
-        if (evt.entity instanceof EntitySheep)
-        {
-            EntitySheep sheep = (EntitySheep)evt.entity;
-            Random rand = new Random();
-            int chance = rand.nextInt(2);
-            if (chance == 1)
-            {
-                //todo drop sheep skull
-//                sheep.entityDropItem(new ItemStack())
-            }
-
-        }
-
-        if (evt.entity instanceof EntityPig)
-        {
-            EntityPig pig = (EntityPig)evt.entity;
-            //todo skull metadata
-//            ItemStack pigSkull = new ItemStack(skullItem, 1, skullMeta);
         }
     }
 }

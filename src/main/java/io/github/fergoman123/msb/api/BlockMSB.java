@@ -20,17 +20,7 @@ public class BlockMSB extends BlockFergo
     }
 
     @Override
-    public Class<? extends ItemBlockFergo> getItemBlock() {
-        return ItemBlockNormalFergo.class;
-    }
-
-    @Override
-    public Block getBlock() {
-        return this;
-    }
-
-    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return getItemFromBlock(getBlock());
+        return Item.getItemFromBlock(this);
     }
 }

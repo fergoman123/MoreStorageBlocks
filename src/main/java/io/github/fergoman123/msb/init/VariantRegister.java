@@ -4,59 +4,83 @@ import io.github.fergoman123.fergoutil.helper.RegisterHelper;
 import io.github.fergoman123.msb.api.ModelVariantMSB;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.Block;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.item.Item;
 
 public class VariantRegister {
     public static void registerVariants(){
-        addVariant(ModBlocks.blockCharcoal, BlockNames.blockCharcoal);
-        addVariant(ModBlocks.blockApple, BlockNames.blockApple);
-        addVariant(ModBlocks.blockGoldApple, BlockNames.blockGoldApple);
-        addVariant(ModBlocks.blockBook, BlockNames.blockBook);
-        addVariant(ModBlocks.blockEgg, BlockNames.blockEgg);
-        addVariant(ModBlocks.blockEnderPearl, BlockNames.blockEnderPearl);
-        addVariant(ModBlocks.blockEnderEye, BlockNames.blockEnderEye);
-        addVariant(ModBlocks.blockLead, BlockNames.blockLead);
-        addVariant(ModBlocks.blockReed, BlockNames.blockReed);
-        addVariant(ModBlocks.blockSeeds, BlockNames.blockSeeds);
-        addVariant(ModBlocks.blockStick, BlockNames.blockStick);
-        addVariant(ModBlocks.blockLeather, BlockNames.blockLeather);
-        addVariant(ModBlocks.blockBucket, BlockNames.blockBucket);
-        addVariant(ModBlocks.blockDye, BlockNames.blockDye);
-        addVariant(ModBlocks.blockFireball, BlockNames.blockFireball);
-        addVariant(ModBlocks.blockSlimeball, BlockNames.blockSlimeball);
-        addVariant(ModBlocks.blockRottenFlesh, BlockNames.blockRottenFlesh);
-        addVariant(ModBlocks.blockPotato, BlockNames.blockPotato);
-        addVariant(ModBlocks.blockNetherWart, BlockNames.blockNetherWart);
-        addVariant(ModBlocks.blockGunpowder, BlockNames.blockGunpowder);
-        addVariant(ModBlocks.blockCarrot, BlockNames.blockCarrot);
-        addVariant(ModBlocks.blockArrow, BlockNames.blockArrow);
-        addVariant(ModBlocks.blockBlazeRod, BlockNames.blockBlazeRod);
-        addVariant(ModBlocks.blockFlint, BlockNames.blockFlint);
-        addVariant(ModBlocks.blockBone, BlockNames.blockBone);
-        addVariant(ModBlocks.blockSugar, BlockNames.blockSugar);
-        addVariant(ModBlocks.blockNetherStar, BlockNames.blockNetherStar);
-        addVariant(ModBlocks.blockClay, BlockNames.blockClay);
-        addVariant(ModBlocks.blockString, BlockNames.blockString);
-        addVariant(ModBlocks.blockFeather, BlockNames.blockFeather);
-        addVariant(ModBlocks.blockBread, BlockNames.blockBread);
-        addVariant(ModBlocks.blockPorkchop, BlockNames.blockPorkchop);
-        addVariant(ModBlocks.blockFish, BlockNames.blockFish);
-        addVariant(ModBlocks.blockCookie, BlockNames.blockCookie);
-        addVariant(ModBlocks.blockBeef, BlockNames.blockBeef);
-        addVariant(ModBlocks.blockPumpkinPie, BlockNames.blockPumpkinPie);
-        addVariant(ModBlocks.blockGhastTear, BlockNames.blockGhastTear);
-        addVariant(ModBlocks.blockSkull, BlockNames.blockSkull);
-        addVariant(ModBlocks.blockMutton, BlockNames.blockMutton);
-        addVariant(ModBlocks.blockRabbit, BlockNames.blockRabbit);
+    	addVariantName(ModBlocks.blockCharcoal, BlockNames.blockCharcoal);
+    	addVariantName(ModBlocks.blockApple, BlockNames.blockApple);
+    	addVariantName(ModBlocks.blockGoldApple, BlockNames.blockGoldApple[0]);
+    	addVariantName(ModBlocks.blockGoldApple, BlockNames.blockGoldApple[1]);
+    	addVariantName(ModBlocks.blockBook, BlockNames.blockBook);
+    	addVariantName(ModBlocks.blockEgg, BlockNames.blockEgg);
+    	addVariantName(ModBlocks.blockEnderPearl, BlockNames.blockEnderPearl);
+    	addVariantName(ModBlocks.blockEnderEye, BlockNames.blockEnderEye);
+    	addVariantName(ModBlocks.blockLead, BlockNames.blockLead);
+    	addVariantName(ModBlocks.blockReed, BlockNames.blockReed);
+    	addVariantName(ModBlocks.blockSeeds, BlockNames.blockSeeds[0]);
+    	addVariantName(ModBlocks.blockSeeds, BlockNames.blockSeeds[1]);
+    	addVariantName(ModBlocks.blockSeeds, BlockNames.blockSeeds[2]);
+    	addVariantName(ModBlocks.blockStick, BlockNames.blockStick);
+    	addVariantName(ModBlocks.blockLeather, BlockNames.blockLeather);
+    	addVariantName(ModBlocks.blockBucket, BlockNames.blockBucket);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[0]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[1]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[2]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[3]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[4]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[5]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[6]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[7]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[8]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[9]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[10]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[11]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[12]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[13]);
+        addVariantName(ModBlocks.blockDye, BlockNames.blockDye[14]);
+        addVariantName(ModBlocks.blockFireball, BlockNames.blockFireball);
+        addVariantName(ModBlocks.blockSlimeball, BlockNames.blockSlimeball);
+        addVariantName(ModBlocks.blockRottenFlesh, BlockNames.blockRottenFlesh);
+        addVariantName(ModBlocks.blockPotato, BlockNames.blockPotato);
+        addVariantName(ModBlocks.blockNetherWart, BlockNames.blockNetherWart);
+        addVariantName(ModBlocks.blockGunpowder, BlockNames.blockGunpowder);
+        addVariantName(ModBlocks.blockCarrot, BlockNames.blockCarrot);
+		addVariantName(ModBlocks.blockArrow, BlockNames.blockArrow);
+        addVariantName(ModBlocks.blockBlazeRod, BlockNames.blockBlazeRod);
+        addVariantName(ModBlocks.blockFlint, BlockNames.blockFlint);
+        addVariantName(ModBlocks.blockBone, BlockNames.blockBone);
+        addVariantName(ModBlocks.blockSugar, BlockNames.blockSugar);
+        addVariantName(ModBlocks.blockNetherStar, BlockNames.blockNetherStar);
+        addVariantName(ModBlocks.blockClay, BlockNames.blockClay);
+        addVariantName(ModBlocks.blockString, BlockNames.blockString);
+        addVariantName(ModBlocks.blockFeather, BlockNames.blockFeather);
+        addVariantName(ModBlocks.blockBread, BlockNames.blockBread);
+        addVariantName(ModBlocks.blockPorkchop, BlockNames.blockPorkchop[0]);
+        addVariantName(ModBlocks.blockPorkchop, BlockNames.blockPorkchop[1]);
+        addVariantName(ModBlocks.blockFish, BlockNames.blockFish[0]);
+        addVariantName(ModBlocks.blockFish, BlockNames.blockFish[1]);
+        addVariantName(ModBlocks.blockFish, BlockNames.blockFish[2]);
+        addVariantName(ModBlocks.blockFish, BlockNames.blockFish[3]);
+        addVariantName(ModBlocks.blockFish, BlockNames.blockFish[4]);
+        addVariantName(ModBlocks.blockFish, BlockNames.blockFish[5]);
+        addVariantName(ModBlocks.blockCookie, BlockNames.blockCookie);
+        addVariantName(ModBlocks.blockBeef, BlockNames.blockBeef[0]);
+        addVariantName(ModBlocks.blockBeef, BlockNames.blockBeef[1]);
+        addVariantName(ModBlocks.blockPumpkinPie, BlockNames.blockPumpkinPie);
+        addVariantName(ModBlocks.blockGhastTear, BlockNames.blockGhastTear);
+        addVariantName(ModBlocks.blockSkull, BlockNames.blockSkull[0]);
+        addVariantName(ModBlocks.blockSkull, BlockNames.blockSkull[1]);
+        addVariantName(ModBlocks.blockSkull, BlockNames.blockSkull[2]);
+        addVariantName(ModBlocks.blockSkull, BlockNames.blockSkull[3]);
+        addVariantName(ModBlocks.blockMutton, BlockNames.blockMutton[0]);
+        addVariantName(ModBlocks.blockMutton, BlockNames.blockMutton[1]);
+        addVariantName(ModBlocks.blockRabbit, BlockNames.blockRabbit[0]);
+        addVariantName(ModBlocks.blockRabbit, BlockNames.blockRabbit[1]);
     }
 
-    private static void addVariant(Block block, String variant){
-        RegisterHelper.addVariant(new ModelVariantMSB(block, variant));
-    }
-
-    private static void addVariant(Block block, String[] variants){
-        ModelVariantMSB[] modelVariants = new ModelVariantMSB[variants.length];
-        for (int i = 0; i < modelVariants.length; i++) {
-            modelVariants[i] = new ModelVariantMSB(block, variants[i]);
-        }
+    private static void addVariantName(Block block, String variant){
+    	ModelBakery.addVariantName(Item.getItemFromBlock(block), "msb:" + variant);
     }
 }
