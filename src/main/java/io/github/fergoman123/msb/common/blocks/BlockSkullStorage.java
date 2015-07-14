@@ -2,7 +2,6 @@ package io.github.fergoman123.msb.common.blocks;
 
 import java.util.Random;
 
-import io.github.fergoman123.fergoutil.block.BlockFergo;
 import io.github.fergoman123.msb.api.BlockMultiMSB;
 import io.github.fergoman123.msb.enums.EnumTypes;
 import io.github.fergoman123.msb.info.BlockNames;
@@ -21,7 +20,7 @@ public class BlockSkullStorage extends BlockMultiMSB
     {
         super(BlockNames.blockSkull, BlockNames.blockSkullName);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumTypes.Skull.blockSkullSkeleton));
-        this.setStepSound(BlockFergo.soundTypeMetal);
+        this.setStepSound(soundTypeMetal);
     }
 
     @Override

@@ -1,9 +1,17 @@
 package io.github.fergoman123.msb.init;
 
-import io.github.fergoman123.fergoutil.item.ItemBlockVariants;
 import io.github.fergoman123.msb.api.BlockMSB;
 import io.github.fergoman123.msb.api.BlockMultiMSB;
-import io.github.fergoman123.msb.common.blocks.*;
+import io.github.fergoman123.msb.api.ItemBlockMSB;
+import io.github.fergoman123.msb.common.blocks.BlockBeef;
+import io.github.fergoman123.msb.common.blocks.BlockDye;
+import io.github.fergoman123.msb.common.blocks.BlockFish;
+import io.github.fergoman123.msb.common.blocks.BlockGoldApple;
+import io.github.fergoman123.msb.common.blocks.BlockMutton;
+import io.github.fergoman123.msb.common.blocks.BlockPorkchop;
+import io.github.fergoman123.msb.common.blocks.BlockRabbit;
+import io.github.fergoman123.msb.common.blocks.BlockSeeds;
+import io.github.fergoman123.msb.common.blocks.BlockSkullStorage;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -141,7 +149,7 @@ public class ModBlocks {
         if (!hasItemBlock) {
             GameRegistry.registerBlock(block, name);
         } else {
-            GameRegistry.registerBlock(block, ItemBlockVariants.class, name);
+            GameRegistry.registerBlock(block, ItemBlockMSB.class, name);
         }
     }
 }

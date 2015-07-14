@@ -1,7 +1,5 @@
 package io.github.fergoman123.msb.init;
 
-import io.github.fergoman123.fergoutil.helper.RegisterHelper;
-import io.github.fergoman123.msb.api.ModelVariantMSB;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.Block;
 import net.minecraft.client.resources.model.ModelBakery;

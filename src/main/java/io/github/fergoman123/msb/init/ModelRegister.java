@@ -1,13 +1,11 @@
 package io.github.fergoman123.msb.init;
 
-import io.github.fergoman123.fergoutil.helper.RegisterHelper;
-import io.github.fergoman123.msb.api.ModelEntryMSB;
+import io.github.fergoman123.msb.api.ModelResLocMSB;
 import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import scala.reflect.macros.internal.macroImpl;
 
 public class ModelRegister {
 
@@ -88,6 +86,6 @@ public class ModelRegister {
     }
     
     private static ModelResourceLocation getModel(String modelName){
-    	return new ModelResourceLocation("msb:" + modelName, "inventory");
+    	return new ModelResLocMSB(modelName);
     }
 }
