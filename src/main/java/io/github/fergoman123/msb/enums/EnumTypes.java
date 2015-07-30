@@ -4,7 +4,7 @@ import net.minecraft.util.IStringSerializable;
 
 public class EnumTypes {
 	
-	public static enum Skull implements IStringSerializable {
+	public enum Skull implements IStringSerializable {
 		blockSkullSkeleton(0, "blockSkullSkeleton"),
 	    blockSkullWither(1, "blockSkullWither"),
 	    blockSkullZombie(2, "blockSkullZombie"),
@@ -13,7 +13,7 @@ public class EnumTypes {
 	    private int meta;
 	    private String name;
 
-	    private Skull(int meta, String name){
+	    Skull(int meta, String name){
 	        this.meta = meta;
 	        this.name = name;
 	    }
@@ -23,7 +23,7 @@ public class EnumTypes {
 	    public int getMeta(){return this.ordinal();}
 	}
 	
-	public static enum Seeds implements IStringSerializable{
+	public enum Seeds implements IStringSerializable{
 		blockWheatSeeds(0, "blockWheatSeeds"),
 	    blockPumpkinSeeds(1, "blockPumpkinSeeds"),
 	    blockMelonSeeds(2, "blockMelonSeeds");
@@ -31,7 +31,7 @@ public class EnumTypes {
 	    private int meta;
 	    private String name;
 
-	    private Seeds(int meta, String name){
+	    Seeds(int meta, String name){
 	    	this.meta = meta;
 	    	this.name = name;
 	    }
@@ -44,14 +44,14 @@ public class EnumTypes {
 	    }
 	}
 	
-	public static enum Rabbit implements IStringSerializable{
+	public enum Rabbit implements IStringSerializable{
 		blockRawRabbit(0, "blockRawRabbit"),
 	    blockCookedRabbit(1, "blockCookedRabbit");
 		
 		private int meta;
 		private String name;
 		
-		private Rabbit(int meta, String name){
+		Rabbit(int meta, String name){
 			this.meta = meta;
 			this.name = name;
 		}
@@ -71,7 +71,7 @@ public class EnumTypes {
 	    }
 	}
 	
-	public static enum Porkchop implements IStringSerializable{
+	public enum Porkchop implements IStringSerializable{
 
 	    blockRawPorkchop(0, "blockRawPorkchop"),
 	    blockCookedPorkchop(1, "blockCookedPorkchop");
@@ -79,7 +79,7 @@ public class EnumTypes {
 	    private int meta;
 	    private String name;
 
-	    private Porkchop(int meta, String name){
+	    Porkchop(int meta, String name){
 	        this.meta = meta;
 	        this.name = name;
 	    }
@@ -99,14 +99,14 @@ public class EnumTypes {
 	    }
 	}
 	
-	public static enum Mutton implements IStringSerializable{
+	public enum Mutton implements IStringSerializable{
 		blockRawMutton(0, "blockRawMutton"),
 	    blockCookedMutton(1, "blockCookedMutton");
 
 	    private int meta;
 	    private String name;
 
-	    private Mutton(int meta, String name){
+	    Mutton(int meta, String name){
 	        this.meta = meta;
 	        this.name = name;
 	    }
@@ -126,14 +126,14 @@ public class EnumTypes {
 	    }
 	}
 	
-	public static enum GoldApple implements IStringSerializable{
+	public enum GoldApple implements IStringSerializable{
 		blockGoldApple1(0, "blockGoldApple1"),
 		blockGoldApple2(1, "blockGoldApple2");
 		
 		private int meta;
 		private String name;
 		
-		private GoldApple(int meta, String name) {
+		GoldApple(int meta, String name) {
 			this.meta = meta;
 			this.name = name;
 		}
@@ -153,7 +153,7 @@ public class EnumTypes {
 		}		
 	}
 	
-	public static enum Dye implements IStringSerializable{
+	public enum Dye implements IStringSerializable{
 		blockInkSack(0, "blockInkSack"),
 	    blockRoseRed(1, "blockRoseRed"),
 	    blockCactusGreen(2, "blockCactusGreen"),
@@ -173,7 +173,7 @@ public class EnumTypes {
 	    private int meta;
 	    private String name;
 
-	    private Dye(int meta, String name){
+	    Dye(int meta, String name){
 	        this.meta = meta;
 	        this.name = name;
 	    }
@@ -183,7 +183,7 @@ public class EnumTypes {
 	    public int getMeta(){return this.meta;}
 	}
 	
-	public static enum Fish implements IStringSerializable{
+	public enum Fish implements IStringSerializable{
 		blockRawFish(0, "blockRawFish"),
 	    blockRawSalmon(1, "blockRawSalmon"),
 	    blockClownfish(2, "blockClownfish"),
@@ -194,7 +194,7 @@ public class EnumTypes {
 	    private int meta;
 	    private String name;
 
-	    private Fish(int meta, String name){
+	    Fish(int meta, String name){
 	        this.meta = meta;
 	        this.name = name;
 	    }
@@ -215,14 +215,14 @@ public class EnumTypes {
 	    }
 	}
 	
-	public static enum Beef implements IStringSerializable{
+	public enum Beef implements IStringSerializable{
 		blockRawBeef(0, "blockRawBeef"),
 	    blockCookedBeef(1, "blockCookedBeef");
 
 	    private int meta;
 	    private String name;
 
-	    private Beef(int meta, String name){
+	    Beef(int meta, String name){
 	        this.meta = meta;
 	        this.name = name;
 	    }
