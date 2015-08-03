@@ -4,9 +4,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import akka.actor.SupervisorStrategyLowPriorityImplicits;
 import io.github.fergoman123.msb.info.ModInfo;
-import tv.twitch.broadcast.StreamInfo;
 
 public class LoggerMSB{
 	private static Logger log = null;

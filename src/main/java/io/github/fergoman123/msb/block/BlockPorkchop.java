@@ -11,7 +11,7 @@ public class BlockPorkchop extends BlockMultiMSB{
     public static final PropertyEnum VARIANT = PropertyEnum.create("variant", Porkchop.class);
 
     public BlockPorkchop(String name) {
-        super(BlockNames.blockGoldApple, name);
+        super(BlockNames.blockPorkchop, name);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, Porkchop.blockRawPorkchop));
     }
 

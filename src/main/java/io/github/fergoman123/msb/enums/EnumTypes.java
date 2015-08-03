@@ -18,9 +18,9 @@ public class EnumTypes {
 	        this.name = name;
 	    }
 
-	    public String getName(){return this.name();}
+	    public String getName(){return this.name;}
 	    public String toString(){return this.getName();}
-	    public int getMeta(){return this.ordinal();}
+	    public int getMeta(){return meta;}
 	}
 	
 	public enum Seeds implements IStringSerializable{
