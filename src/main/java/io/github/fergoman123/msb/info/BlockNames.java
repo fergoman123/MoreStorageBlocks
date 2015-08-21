@@ -5,7 +5,7 @@ public class BlockNames
     public static final String blockCharcoal = "blockCharcoal";
     public static final String blockApple = "blockApple";
     public static final String blockGoldAppleName = "blockGA";
-    public static final String[] blockGoldApple = {"blockGoldApple1", "blockGoldApple2"};
+    public static final String[] blockGoldApple = {"blockGApple1", "blockNapple"};
     public static final String blockBook = "blockBook";
     public static final String blockEgg = "blockEgg";
     public static final String blockEnderPearl = "blockEnderPearl";
@@ -51,4 +51,6 @@ public class BlockNames
     public static final String[] blockMutton = {"blockRawMutton", "blockCookedMutton"};
     public static final String blockRabbitName = "blockRabbit";
     public static final String[] blockRabbit = {"blockRawRabbit", "blockCookedRabbit"};
+    public static final String compCobbleName = "compCobble";
+    public static final String[] comCobble = {"cobble9x", "cobble81x", "cobble729x", "cobble"};
 }
