@@ -52,5 +52,4 @@ public class BlockNames
     public static final String blockRabbitName = "blockRabbit";
     public static final String[] blockRabbit = {"blockRawRabbit", "blockCookedRabbit"};
     public static final String compCobbleName = "compCobble";
-    public static final String[] comCobble = {"cobble9x", "cobble81x", "cobble729x", "cobble"};
 }

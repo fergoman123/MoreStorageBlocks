@@ -63,7 +63,7 @@ public class ModBlocks {
 	public static final BlockMultiMSB blockMutton = new BlockMutton(BlockNames.blockMuttonName);
 	public static final BlockMultiMSB blockRabbit = new BlockRabbit(BlockNames.blockRabbitName);
 	
-	public static final BlockMultiMSB blockCompressedCobble = new BlockCompCobble("");
+	public static final BlockMultiMSB blockCompressedCobble = new BlockCompCobble(BlockNames.compCobbleName);
 
 	public static void registerBlocks() {
 		GameRegistry.registerBlock(blockCharcoal, BlockNames.blockCharcoal);
