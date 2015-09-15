@@ -1,19 +1,23 @@
 package io.github.fergoman123.msb.block;
 
-import io.github.fergoman123.fergoutil.item.ItemBlockVariants;
-import net.minecraft.block.Block;
+import io.github.fergoman123.fergoutil.helper.NameHelper;
+import io.github.fergoman123.msb.info.BlockNames;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
+
+import java.util.List;
 
 public class BlockCompCobble extends BlockMultiMSB {
 
 	public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumType.class);
 
-	public BlockCompCobble(String[] subNames, String name) {
-		super(subNames, name);
+	public BlockCompCobble(String name) {
+		super(BlockNames.compCobble, name);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.compCobble1));
 	}
 
 	@Override
@@ -36,6 +40,28 @@ public class BlockCompCobble extends BlockMultiMSB {
 		return new BlockState(this, VARIANT);
 	}
 
+	@Override
+	@SuppressWarnings("unchecked")
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List tooltip, boolean advanced) {
+		tooltip.add(NameHelper.translate("msb.tooltip.oredict"));
+		if(stack.getItemDamage() == 0)tooltip.add("blockCompCobble1");
+		if(stack.getItemDamage() == 1)tooltip.add("blockCompCobble2");
+		if(stack.getItemDamage() == 2)tooltip.add("blockCompCobble3");
+		if(stack.getItemDamage() == 3)tooltip.add("blockCompCobble4");
+		if(stack.getItemDamage() == 4)tooltip.add("blockCompCobble5");
+		if(stack.getItemDamage() == 5)tooltip.add("blockCompCobble6");
+		if(stack.getItemDamage() == 6)tooltip.add("blockCompCobble7");
+		if(stack.getItemDamage() == 7)tooltip.add("blockCompCobble8");
+		if(stack.getItemDamage() == 8)tooltip.add("blockCompCobble9");
+		if(stack.getItemDamage() == 9)tooltip.add("blockCompCobble10");
+		if(stack.getItemDamage() == 10)tooltip.add("blockCompCobble11");
+		if(stack.getItemDamage() == 11)tooltip.add("blockCompCobble12");
+		if(stack.getItemDamage() == 12)tooltip.add("blockCompCobble13");
+		if(stack.getItemDamage() == 13)tooltip.add("blockCompCobble14");
+		if(stack.getItemDamage() == 14)tooltip.add("blockCompCobble15");
+		if(stack.getItemDamage() == 15)tooltip.add("blockCompCobble15");
+	}
+
 	public enum EnumType implements IStringSerializable{
 		compCobble1(0, "9x"),
 		compCobble2(1, "81x"),
@@ -52,13 +78,12 @@ public class BlockCompCobble extends BlockMultiMSB {
 		compCobble13(12, "2541865828329x"),
 		compCobble14(13, "22876792454961x"),
 		compCobble15(14, "205891132094649x"),
-		compCobble16(15, "1853020188851841x"),
-		;
+		compCobble16(15, "1853020188851841x");
 
 		public int meta;
 		public String name;
 
-		private EnumType(int meta, String name){
+		EnumType(int meta, String name){
 			this.meta = meta;
 			this.name = name;
 		}
@@ -70,16 +95,4 @@ public class BlockCompCobble extends BlockMultiMSB {
 			return name;
 		}
 	}
-
-    public static final class ItemBlockCompCobble extends ItemBlockVariants {
-        public ItemBlockCompCobble(Block block) {
-            super(block);
-        }
-
-        @Override
-        public String getUnlocalizedName(ItemStack stack) {
-            return super.getUnlocalizedName() + "." + EnumType.prefix + EnumType.values()[stack.getItemDamage()];
-
-        }
-    }
 }

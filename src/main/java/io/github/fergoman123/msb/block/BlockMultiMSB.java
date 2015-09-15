@@ -1,14 +1,19 @@
 package io.github.fergoman123.msb.block;
 
+import io.github.fergoman123.fergoutil.block.IBlockInfo;
 import io.github.fergoman123.fergoutil.item.ItemBlockVariants;
 import io.github.fergoman123.msb.MSB;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public abstract class BlockMultiMSB extends Block {
+import java.util.List;
+
+public abstract class BlockMultiMSB extends Block implements IBlockInfo{
 	private String[] subNames;
 	private String name;
 
@@ -38,8 +43,8 @@ public abstract class BlockMultiMSB extends Block {
         }
 
         public String getUnlocalizedName(ItemStack stack){
-            BlockMultiMSB multiMSB = (BlockMultiMSB)this.block;
-            return super.getUnlocalizedName() + "." + multiMSB.getSubNames()[stack.getItemDamage()];
+            BlockMultiMSB block = (BlockMultiMSB)this.block;
+            return super.getUnlocalizedName() + "." + block.getSubNames()[stack.getItemDamage()];
         }
 	}
 
@@ -47,4 +52,11 @@ public abstract class BlockMultiMSB extends Block {
     public abstract IBlockState getStateFromMeta(int meta);
     public abstract int getMetaFromState(IBlockState state);
     public abstract BlockState createBlockState();
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    public void getSubBlocks(Item item, CreativeTabs tab, List list){
+        for (int i = 0; i < subNames.length; i++) {
+            list.add(new ItemStack(item, 1, i));
+        }
+    }
 }

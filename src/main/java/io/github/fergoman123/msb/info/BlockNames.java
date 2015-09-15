@@ -1,7 +1,8 @@
 package io.github.fergoman123.msb.info;
 
-public class BlockNames
-{
+import io.github.fergoman123.msb.block.BlockCompCobble;
+
+public class BlockNames {
     public static final String blockCharcoal = "blockCharcoal";
     public static final String blockApple = "blockApple";
     public static final String blockGoldAppleName = "blockGA";
@@ -51,5 +52,24 @@ public class BlockNames
     public static final String[] blockMutton = {"blockRawMutton", "blockCookedMutton"};
     public static final String blockRabbitName = "blockRabbit";
     public static final String[] blockRabbit = {"blockRawRabbit", "blockCookedRabbit"};
-    public static final String compCobbleName = "compCobble";
+    public static final String compCobbleName = "blockCompCobble";
+    public static final String[] compCobble =
+            {
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble1.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble2.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble3.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble4.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble5.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble6.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble7.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble8.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble9.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble10.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble11.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble12.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble13.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble14.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble15.name(),
+                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble16.name(),
+            };
 }
