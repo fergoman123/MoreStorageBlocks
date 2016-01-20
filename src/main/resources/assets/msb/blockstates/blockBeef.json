@@ -1,6 +1,6 @@
 {
   "variants":{
-    "variant=blockrawbeef":{"model":"msb:blockRawBeef"},
-    "variant=blockcookedbeef":{"model": "msb:blockCookedBeef"}
+    "variant=blockrawbeef": {"model": "msb:blockRawBeef"},
+    "variant=blockcookedbeef": {"model": "msb:blockCookedBeef"}
   }
 }

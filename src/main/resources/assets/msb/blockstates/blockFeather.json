@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockFeather" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockFeather"}
+  }
 }

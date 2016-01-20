@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockSugar" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockSugar"}
+  }
 }

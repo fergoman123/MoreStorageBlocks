@@ -1,6 +1,5 @@
 {
-  "variants":
-  {
+  "variants":{
     "variant=blockrawrabbit": {"model": "msb:blockRawRabbit"},
     "variant=blockcookedrabbit": {"model": "msb:blockCookedRabbit"}
   }

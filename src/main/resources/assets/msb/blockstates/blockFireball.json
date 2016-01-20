@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockFireball" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockFireball"}
+  }
 }

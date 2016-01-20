@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockNetherWart" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockNetherWart"}
+  }
 }

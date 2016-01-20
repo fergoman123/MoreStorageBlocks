@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockEgg" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockEgg"}
+  }
 }

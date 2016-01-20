@@ -1,7 +1,6 @@
 package io.github.fergoman123.msb.block;
 
-import io.github.fergoman123.fergoutil.block.IBlockInfo;
-import io.github.fergoman123.fergoutil.item.ItemBlockVariants;
+import io.github.fergoman123.fergoutil.helper.NameHelper;
 import io.github.fergoman123.msb.MSB;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -13,50 +12,37 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
-public abstract class BlockMultiMSB extends Block implements IBlockInfo{
-	private String[] subNames;
-	private String name;
+public abstract class BlockMultiMSB extends Block {
 
-	public BlockMultiMSB(String[] subNames, String name) {
-		super(Material.iron);
-		this.setCreativeTab(MSB.tabMSB);
-		this.setUnlocalizedName(name);
-        this.subNames = subNames;
-        this.name = name;
-	}
+    private String[] names;
 
-    public String getUnlocalizedName(){
-        return String.format("tile.msb.%s", this.name);
+    public BlockMultiMSB(String[] names, String name) {
+        super(Material.iron);
+        this.names = names;
+        this.setUnlocalizedName(name);
+        setCreativeTab(MSB.tabMSB);
     }
-
-    public String[] getSubNames() {
-        return subNames;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public static final class ItemBlockMSB extends ItemBlockVariants{
-		public ItemBlockMSB(Block block){
-            super(block);
-        }
-
-        public String getUnlocalizedName(ItemStack stack){
-            BlockMultiMSB block = (BlockMultiMSB)this.block;
-            return super.getUnlocalizedName() + "." + block.getSubNames()[stack.getItemDamage()];
-        }
-	}
 
     public abstract int damageDropped(IBlockState state);
+
     public abstract IBlockState getStateFromMeta(int meta);
+
     public abstract int getMetaFromState(IBlockState state);
+
     public abstract BlockState createBlockState();
 
+    public String[] getNames() {
+        return names;
+    }
+
     @SuppressWarnings({"unchecked", "rawtypes"})
-    public void getSubBlocks(Item item, CreativeTabs tab, List list){
-        for (int i = 0; i < subNames.length; i++) {
+    public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+        for (int i = 0; i < getNames().length; i++) {
             list.add(new ItemStack(item, 1, i));
         }
+    }
+
+    public String getUnlocalizedName(){
+        return String.format("tile.msb.%s", NameHelper.getName(super.getUnlocalizedName(), "."));
     }
 }

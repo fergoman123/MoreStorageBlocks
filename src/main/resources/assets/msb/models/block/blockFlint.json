@@ -1,6 +1,6 @@
 {
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "msb:blocks/blockFlint"
-	}
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "msb:blocks/blockFlint"
+    }
 }

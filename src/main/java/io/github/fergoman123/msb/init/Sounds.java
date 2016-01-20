@@ -11,28 +11,22 @@ package io.github.fergoman123.msb.init;
 
 import net.minecraft.block.Block.SoundType;
 
-public class Sounds
-{
-    public static class SoundTypeMSB extends SoundType
-    {
+public class Sounds {
+    public static class SoundTypeMSB extends SoundType {
         private String name;
 
-        public SoundTypeMSB(String name, float volume, float frequency)
-        {
-        	super(name, volume, frequency);
-        	this.name = name;
+        public SoundTypeMSB(String name, float volume, float frequency) {
+            super(name, volume, frequency);
+            this.name = name;
         }
 
-        @Override public String getBreakSound(){return this.soundName;}
-        @Override public String getStepSound(){return getBreakSound();}
-        @Override public String getPlaceSound(){return getBreakSound();}
-        
-        public String getName() {
-			return name;
-		}
+        public String getBreakSound(){return this.soundName;}
+        public String getStepSound(){return getBreakSound();}
+        public String getPlaceSound(){return getBreakSound();}
+        public String getName(){return name;}
     }
 
-    public static final SoundTypeMSB blaze = new SoundTypeMSB("mob.blaze.breathe", 1f,1f);
+    public static final SoundTypeMSB blaze = new SoundTypeMSB("mob.blaze.breathe", 1f, 1f);
     public static final SoundTypeMSB cow = new SoundTypeMSB("mob.cow.say", 1f, 1f);
     public static final SoundTypeMSB enderman = new SoundTypeMSB("mob.enderman.idle", 1f, 1f);
     public static final SoundTypeMSB mutton = new SoundTypeMSB("mob.sheep.say", 1f, 1f);

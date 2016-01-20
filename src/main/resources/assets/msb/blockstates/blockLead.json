@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockLead" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockLead"}
+  }
 }

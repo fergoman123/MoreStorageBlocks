@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockCharcoal" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockCharcoal"}
+  }
 }

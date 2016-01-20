@@ -1,38 +1,78 @@
 package io.github.fergoman123.msb.block;
 
-import io.github.fergoman123.msb.info.BlockNames;
+import io.github.fergoman123.msb.init.ModBlocks;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
-
-import static io.github.fergoman123.msb.enums.EnumTypes.Dye;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IStringSerializable;
 
 public class BlockDye extends BlockMultiMSB {
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", Dye.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumType.class);
 
-    public BlockDye(String name){
-        super(BlockNames.blockDye, name);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, Dye.blockInkSack));
+    public BlockDye(String name) {
+        super(EnumType.getNames(), name);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockInkSack));
     }
 
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((Dye)state.getValue(VARIANT)).getMeta();
+        return ((EnumType) state.getValue(VARIANT)).ordinal();
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, Dye.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, EnumType.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((Dye)state.getValue(VARIANT)).getMeta();
+        return ((EnumType) state.getValue(VARIANT)).ordinal();
     }
 
     @Override
     public BlockState createBlockState() {
         return new BlockState(this, VARIANT);
+    }
+
+    public enum EnumType implements IStringSerializable {
+        blockInkSack("blockInkSack"),
+        blockRoseRed("blockRoseRed"),
+        blockCactusGreen("blockCactusGreen"),
+        blockCocoa("blockCocoa"),
+        blockPurpleDye("blockPurpleDye"),
+        blockCyanDye("blockCyanDye"),
+        blockSilverDye("blockSilverDye"),
+        blockGrayDye("blockGrayDye"),
+        blockPinkDye("blockPinkDye"),
+        blockLimeDye("blockLimeDye"),
+        blockYellowDye("blockYellowDye"),
+        blockLightBlueDye("blockLightBlueDye"),
+        blockMagentaDye("blockMagentaDye"),
+        blockOrangeDye("blockOrangeDye"),
+        blockWhiteDye("blockWhiteDye");
+
+        private String name;
+
+        EnumType(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+
+        public static String[] getNames() {
+            String[] names = new String[values().length];
+            for (int i = 0; i < names.length; i++) {
+                names[i] = values()[i].getName();
+            }
+            return names;
+        }
+
+        public ItemStack getItemStack(int amt) {
+            return new ItemStack(ModBlocks.blockDye, amt, ordinal());
+        }
     }
 }

@@ -6,17 +6,14 @@ import io.github.fergoman123.msb.init.ModBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class CreativeTabMSB extends CreativeTabs
-{
+public class CreativeTabMSB extends CreativeTabs {
 
-    public CreativeTabMSB(String label)
-    {
+    public CreativeTabMSB(String label) {
         super(label);
     }
 
     @Override
-    public Item getTabIconItem()
-    {
+    public Item getTabIconItem() {
         return Item.getItemFromBlock(ModBlocks.blockApple);
     }
 

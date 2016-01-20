@@ -1,6 +1,6 @@
 {
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "msb:blocks/blockClownfish"
-	}
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "msb:blocks/blockClownfish"
+    }
 }

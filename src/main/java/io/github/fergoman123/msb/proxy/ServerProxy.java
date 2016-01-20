@@ -1,21 +1,23 @@
 package io.github.fergoman123.msb.proxy;
 
 import io.github.fergoman123.fergoutil.proxy.CommonProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-public class ServerProxy extends CommonProxy
-{
+public class ServerProxy extends CommonProxy {
     @Override
-    public void preInit() {
-        
+    public void preInit(FMLPreInitializationEvent evt) {
+
     }
 
     @Override
-    public void init() {
+    public void init(FMLInitializationEvent evt) {
 
     }
 
     @Override
-    public void postInit() {
+    public void postInit(FMLPostInitializationEvent evt) {
 
     }
 }

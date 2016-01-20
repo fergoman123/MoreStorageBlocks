@@ -1,6 +1,6 @@
 {
   "variants":{
-    "variant=blockrawporkchop":{"model":"msb:blockRawPorkchop"},
-    "variant=blockcookedporkchop":{"model":"msb:blockCookedPorkchop"}
+    "variant=blockrawporkchop": {"model": "msb:blockRawPorkchop"},
+    "variant=blockcookedporkchop": {"model": "msb:blockCookedPorkchop"}
   }
 }

@@ -3,17 +3,16 @@
     "variant=blockinksack": {"model": "msb:blockInkSack"},
     "variant=blockrosered": {"model": "msb:blockRoseRed"},
     "variant=blockcactusgreen": {"model": "msb:blockCactusGreen"},
-    "variant=blockcocoa":{"model":"msb:blockCocoa"},
-    "variant=blockpurpledye":{"model":"msb:blockPurpleDye"},
-    "variant=blockcyandye":{"model":"msb:blockCyanDye"},
-    "variant=blocksilverdye":{"model":"msb:blockSilverDye"},
-    "variant=blockgraydye":{"model":"msb:blockGrayDye"},
-    "variant=blockpinkdye":{"model":"msb:blockPinkDye"},
-    "variant=blocklimedye":{"model":"msb:blockLimeDye"},
-    "variant=blockyellowdye":{"model":"msb:blockYellowDye"},
-    "variant=blocklightbluedye":{"model":"msb:blockLightBlueDye"},
-    "variant=blockmegentadye":{"model":"msb:blockMagentaDye"},
-    "variant=blockorangedye":{"model":"msb:blockOrangeDye"},
-    "variant=blockwhitedye":{"model":"msb:blockWhiteDye"}
+    "variant=blockcocoa": {"model": "msb:blockCocoa"},
+    "variant=blockpurpledye": {"model": "msb:blockPurpleDye"},
+    "variant=blockcyandye": {"model": "msb:blockCyanDye"},
+    "variant=blocksilverdye": {"model": "msb:blockSilverDye"},
+    "variant=blockgraydye": {"model": "msb:blockGrayDye"},
+    "variant=blocklimedye": {"model": "msb:blocklimedye"},
+    "variant=blockyellowdye": {"model": "msb:blockYellowDye"},
+    "variant=blocklightbluedye": {"model": "msb:blockLightBlueDye"},
+    "variant=blockmagentadye": {"model": "msb:blockMagentaDye"},
+    "variant=blockorangedye": {"model": "msb:blockOrangeDye"},
+    "variant=blockwhitedye": {"model": "msb:blockWhiteDye"}
   }
 }

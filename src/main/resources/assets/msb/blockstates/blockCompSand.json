@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "variant=blockcompsand1": {"model": "sand"},
+    "variant=blockcompsand2": {"model": "sand"},
+    "variant=blockcompsand3": {"model": "sand"},
+    "variant=blockcompsand4": {"model": "sand"},
+    "variant=blockcompsand5": {"model": "sand"},
+    "variant=blockcompsand6": {"model": "sand"},
+    "variant=blockcompsand7": {"model": "sand"},
+    "variant=blockcompsand8": {"model": "sand"},
+    "variant=blockcompsand9": {"model": "sand"},
+    "variant=blockcompsand10": {"model": "sand"},
+    "variant=blockcompsand11": {"model": "sand"},
+    "variant=blockcompsand12": {"model": "sand"},
+    "variant=blockcompsand13": {"model": "sand"},
+    "variant=blockcompsand14": {"model": "sand"},
+    "variant=blockcompsand15": {"model": "sand"},
+    "variant=blockcompsand16": {"model": "sand"}
+  }
+}

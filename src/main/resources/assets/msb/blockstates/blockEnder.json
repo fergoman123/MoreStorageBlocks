@@ -1,0 +1,6 @@
+{
+  "variants":{
+    "variant=blockenderpearl": {"model": "msb:blockEnderPearl"},
+    "variant=blockendereye": {"model": "msb:blockEnderEye"}
+  }
+}

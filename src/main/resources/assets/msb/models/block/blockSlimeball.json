@@ -1,6 +1,6 @@
 {
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "msb:blocks/blockSlimeball"
-	}
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "msb:blocks/blockSlimeball"
+    }
 }

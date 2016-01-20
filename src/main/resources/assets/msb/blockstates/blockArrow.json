@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockArrow" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockArrow"}
+  }
 }

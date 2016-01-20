@@ -1,36 +1,64 @@
 package io.github.fergoman123.msb.block;
 
-import io.github.fergoman123.msb.info.BlockNames;
+import io.github.fergoman123.msb.init.ModBlocks;
 import net.minecraft.block.properties.PropertyEnum;
-import io.github.fergoman123.msb.enums.EnumTypes.Rabbit;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IStringSerializable;
 
 public class BlockRabbit extends BlockMultiMSB {
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", Rabbit.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumType.class);
 
     public BlockRabbit(String name) {
-        super(BlockNames.blockRabbit, name);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, Rabbit.blockRawRabbit));
+        super(EnumType.getNames(), name);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.blockRawRabbit));
     }
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((Rabbit)state.getValue(VARIANT)).getMeta();
+        return ((EnumType) state.getValue(VARIANT)).ordinal();
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, Rabbit.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, EnumType.values()[meta]);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((Rabbit)state.getValue(VARIANT)).getMeta();
+        return ((EnumType) state.getValue(VARIANT)).ordinal();
     }
 
     @Override
     public BlockState createBlockState() {
         return new BlockState(this, VARIANT);
+    }
+
+    public enum EnumType implements IStringSerializable {
+        blockRawRabbit("blockRawRabbit"),
+        blockCookedRabbit("blockCookedRabbit");
+
+        private String name;
+
+        EnumType(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+
+        public static String[] getNames() {
+            String[] names = new String[values().length];
+            for (int i = 0; i < names.length; i++) {
+                names[i] = values()[i].getName();
+            }
+            return names;
+        }
+
+        public ItemStack getItemStack(int amt) {
+            return new ItemStack(ModBlocks.blockRabbit, amt, ordinal());
+        }
     }
 }

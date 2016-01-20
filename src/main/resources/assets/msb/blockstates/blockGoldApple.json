@@ -1,0 +1,6 @@
+{
+  "variants":{
+    "variant=blockgoldapple1": {"model": "msb:blockGoldApple1"},
+    "variant=blockgoldapple2": {"model": "msb:blockGoldApple2"}
+  }
+}

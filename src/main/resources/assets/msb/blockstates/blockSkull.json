@@ -1,8 +1,8 @@
 {
   "variants":{
-    "variant=blockskullcreeper":{"model":"msb:blockSkullCreeper"},
-    "variant=blockskullzombie":{"model":"msb:blockSkullZombie"},
-    "variant=blockskullwither":{"model":"msb:blockSkullWither"},
-    "variant=blockskullskeleton":{"model":"msb:blockSkullSkeleton"}
+    "variant=blockskullskeleton": {"model": "msb:blockSkullSkeleton"},
+    "variant=blockskullwither": {"model": "msb:blockSkullWither"},
+    "variant=blockskullzombie": {"model": "msb:blockSkullZombie"},
+    "variant=blockskullcreeper": {"model": "msb:blockSkullCreeper"}
   }
 }

@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockBread" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockBread"}
+  }
 }

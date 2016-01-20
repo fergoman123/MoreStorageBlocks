@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockPotato" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockPotato"}
+  }
 }

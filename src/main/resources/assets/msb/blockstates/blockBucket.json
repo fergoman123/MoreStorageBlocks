@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"normal": { "model": "msb:blockBucket" }
-	}
+  "variants":{
+    "normal": {"model": "msb:blockBucket"}
+  }
 }

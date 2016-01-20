@@ -1,25 +1,19 @@
 package io.github.fergoman123.msb.info;
 
-import io.github.fergoman123.msb.block.BlockCompCobble;
-
 public class BlockNames {
     public static final String blockCharcoal = "blockCharcoal";
     public static final String blockApple = "blockApple";
-    public static final String blockGoldAppleName = "blockGA";
-    public static final String[] blockGoldApple = {"blockGApple1", "blockNapple"};
+    public static final String blockGoldApple = "blockGoldApple";
     public static final String blockBook = "blockBook";
     public static final String blockEgg = "blockEgg";
-    public static final String blockEnderPearl = "blockEnderPearl";
-    public static final String blockEnderEye = "blockEnderEye";
+    public static final String blockEnder = "blockEnder";
     public static final String blockLead = "blockLead";
     public static final String blockReed = "blockReed";
-    public static final String blockSeedsName = "blockSeeds";
-    public static final String[] blockSeeds = {"blockWheatSeeds", "blockPumpkinSeeds", "blockMelonSeeds"};
+    public static final String blockSeeds = "blockSeeds";
     public static final String blockStick = "blockStick";
     public static final String blockLeather = "blockLeather";
     public static final String blockBucket = "blockBucket";
-    public static final String blockDyeName = "blockDye";
-    public static final String[] blockDye = {"blockInkSack", "blockRoseRed", "blockCactusGreen", "blockCocoa", "blockPurpleDye", "blockCyanDye", "blockSilverDye", "blockGrayDye", "blockPinkDye", "blockLimeDye", "blockYellowDye", "blockLightBlueDye", "blockMagentaDye", "blockOrangeDye", "blockWhiteDye"};
+    public static final String blockDye = "blockDye";
     public static final String blockFireball = "blockFireball";
     public static final String blockSlimeball = "blockSlimeball";
     public static final String blockRottenFlesh = "blockRottenFlesh";
@@ -37,39 +31,16 @@ public class BlockNames {
     public static final String blockString = "blockString";
     public static final String blockFeather = "blockFeather";
     public static final String blockBread = "blockBread";
-    public static final String blockPorkchopName = "blockPorkchop";
-    public static final String[] blockPorkchop = {"blockRawPorkchop", "blockCookedPorkchop"};
-    public static final String blockFishName = "blockFish";
-    public static final String[] blockFish = {"blockRawFish", "blockRawSalmon", "blockClownfish", "blockPufferfish", "blockCookedFish", "blockCookedSalmon"};
+    public static final String blockPorkchop = "blockPorkchop";
+    public static final String blockFish = "blockFish";
     public static final String blockCookie = "blockCookie";
-    public static final String blockBeefName = "blockBeef";
-    public static final String[] blockBeef = {"blockRawBeef", "blockCookedBeef"};
+    public static final String blockBeef = "blockBeef";
     public static final String blockPumpkinPie = "blockPumpkinPie";
     public static final String blockGhastTear = "blockGhastTear";
-    public static final String blockSkullName = "blockSkull";
-    public static final String[] blockSkull = {"blockSkullSkeleton", "blockSkullWither", "blockSkullZombie", "blockSkullCreeper"};
-    public static final String blockMuttonName = "blockMutton";
-    public static final String[] blockMutton = {"blockRawMutton", "blockCookedMutton"};
-    public static final String blockRabbitName = "blockRabbit";
-    public static final String[] blockRabbit = {"blockRawRabbit", "blockCookedRabbit"};
-    public static final String compCobbleName = "blockCompCobble";
-    public static final String[] compCobble =
-            {
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble1.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble2.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble3.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble4.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble5.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble6.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble7.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble8.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble9.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble10.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble11.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble12.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble13.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble14.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble15.name(),
-                    BlockCompCobble.EnumType.prefix + BlockCompCobble.EnumType.compCobble16.name(),
-            };
+    public static final String blockSkull = "blockSkull";
+    public static final String blockMutton = "blockMutton";
+    public static final String blockRabbit = "blockRabbit";
+    public static final String blockCompCobble = "blockCompCobble";
+    public static final String blockCompSand = "blockCompSand";
+    public static final String blockCompGravel = "blockCompGravel";
 }

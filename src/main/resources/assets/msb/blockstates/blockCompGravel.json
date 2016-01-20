@@ -1,0 +1,20 @@
+{
+  "variants":{
+    "variant=blockcompgravel1": {"model": "gravel"},
+    "variant=blockcompgravel2": {"model": "gravel"},
+    "variant=blockcompgravel3": {"model": "gravel"},
+    "variant=blockcompgravel4": {"model": "gravel"},
+    "variant=blockcompgravel5": {"model": "gravel"},
+    "variant=blockcompgravel6": {"model": "gravel"},
+    "variant=blockcompgravel7": {"model": "gravel"},
+    "variant=blockcompgravel8": {"model": "gravel"},
+    "variant=blockcompgravel9": {"model": "gravel"},
+    "variant=blockcompgravel10": {"model": "gravel"},
+    "variant=blockcompgravel11": {"model": "gravel"},
+    "variant=blockcompgravel12": {"model": "gravel"},
+    "variant=blockcompgravel13": {"model": "gravel"},
+    "variant=blockcompgravel14": {"model": "gravel"},
+    "variant=blockcompgravel15": {"model": "gravel"},
+    "variant=blockcompgravel16": {"model": "gravel"}
+  }
+}

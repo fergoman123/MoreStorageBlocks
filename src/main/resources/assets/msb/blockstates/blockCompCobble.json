@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "variant=blockcompcobble1": {"model": "cobblestone"},
+    "variant=blockcompcobble2": {"model": "cobblestone"},
+    "variant=blockcompcobble3": {"model": "cobblestone"},
+    "variant=blockcompcobble4": {"model": "cobblestone"},
+    "variant=blockcompcobble5": {"model": "cobblestone"},
+    "variant=blockcompcobble6": {"model": "cobblestone"},
+    "variant=blockcompcobble7": {"model": "cobblestone"},
+    "variant=blockcompcobble8": {"model": "cobblestone"},
+    "variant=blockcompcobble9": {"model": "cobblestone"},
+    "variant=blockcompcobble10": {"model": "cobblestone"},
+    "variant=blockcompcobble11": {"model": "cobblestone"},
+    "variant=blockcompcobble12": {"model": "cobblestone"},
+    "variant=blockcompcobble13": {"model": "cobblestone"},
+    "variant=blockcompcobble14": {"model": "cobblestone"},
+    "variant=blockcompcobble15": {"model": "cobblestone"},
+    "variant=blockcompcobble16": {"model": "cobblestone"}
+  }
+}
