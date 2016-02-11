@@ -2,6 +2,7 @@ package io.github.fergoman123.msb.init;
 
 import io.github.fergoman123.msb.block.*;
 import io.github.fergoman123.msb.info.BlockNames;
+import io.github.fergoman123.msb.item.ItemBlockEnder;
 import io.github.fergoman123.msb.item.ItemBlockGoldApple;
 import io.github.fergoman123.msb.item.ItemBlockMultiMSB;
 import net.minecraft.block.Block;
@@ -9,52 +10,52 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import static io.github.fergoman123.msb.helper.MSBHelper.registerBlock;
 
 public class ModBlocks {
-	public static BlockMSB blockCharcoal;
-	public static BlockMSB blockApple;
-	public static BlockMultiMSB blockGoldApple;
-	public static BlockMSB blockBook;
-	public static BlockMSB blockEgg;
-	public static BlockMultiMSB blockEnder;
-	public static BlockMSB blockLead;
-	public static BlockMSB blockReed;
-	public static BlockMultiMSB blockSeeds;
-	public static BlockMSB blockStick;
-	public static BlockMSB blockLeather;
-	public static BlockMSB blockBucket;
-	public static BlockMultiMSB blockDye;
-	public static BlockMSB blockFireball;
-	public static BlockMSB blockSlimeball;
-	public static BlockMSB blockRottenFlesh;
-	public static BlockMSB blockPotato;
-	public static BlockMSB blockNetherWart;
-	public static BlockMSB blockGunpowder;
-	public static BlockMSB blockCarrot;
-	public static BlockMSB blockArrow;
-	public static BlockMSB blockBlazeRod;
-	public static BlockMSB blockFlint;
-	public static BlockMSB blockBone;
-	public static BlockMSB blockSugar;
-	public static BlockMSB blockNetherStar;
-	public static BlockMSB blockClay;
-	public static BlockMSB blockString;
-	public static BlockMSB blockFeather;
-	public static BlockMSB blockBread;
-	public static BlockMultiMSB blockPorkchop;
-	public static BlockMultiMSB blockFish;
-	public static BlockMSB blockCookie;
-	public static BlockMultiMSB blockBeef;
-	public static BlockMSB blockPumpkinPie;
-	public static BlockMSB blockGhastTear;
-	public static BlockMultiMSB blockSkull;
-	public static BlockMultiMSB blockMutton;
-	public static BlockMultiMSB blockRabbit;
-	public static BlockMultiMSB blockCompCobble;
-	public static BlockMultiMSB blockCompSand;
-	public static BlockMultiMSB blockCompGravel;
+	public static Block blockCharcoal;
+	public static Block blockApple;
+	public static Block blockGoldApple;
+	public static Block blockBook;
+	public static Block blockEgg;
+	public static Block blockEnder;
+	public static Block blockLead;
+	public static Block blockReed;
+	public static Block blockSeeds;
+	public static Block blockStick;
+	public static Block blockLeather;
+	public static Block blockBucket;
+	public static Block blockDye;
+	public static Block blockFireball;
+	public static Block blockSlimeball;
+	public static Block blockRottenFlesh;
+	public static Block blockPotato;
+	public static Block blockNether;
+	public static Block blockGunpowder;
+	public static Block blockCarrot;
+	public static Block blockArrow;
+	public static Block blockBlazeRod;
+	public static Block blockFlint;
+	public static Block blockBone;
+	public static Block blockSugar;
+	public static Block blockClay;
+	public static Block blockString;
+	public static Block blockFeather;
+	public static Block blockBread;
+	public static Block blockPorkchop;
+	public static Block blockFish;
+	public static Block blockCookie;
+	public static Block blockBeef;
+	public static Block blockPumpkinPie;
+	public static Block blockGhastTear;
+	public static Block blockSkull;
+	public static Block blockMutton;
+	public static Block blockRabbit;
+	public static Block blockCompCobble;
+	public static Block blockCompSand;
+	public static Block blockCompGravel;
 
 	public static void addBlocks() {
 		blockCharcoal = new BlockMSB(BlockNames.blockCharcoal);
@@ -74,7 +75,7 @@ public class ModBlocks {
 		blockSlimeball = new BlockMSB(BlockNames.blockSlimeball);
 		blockRottenFlesh = new BlockMSB(BlockNames.blockRottenFlesh);
 		blockPotato = new BlockMSB(BlockNames.blockPotato);
-		blockNetherWart = new BlockMSB(BlockNames.blockNetherWart);
+		blockNether = new BlockNether(BlockNames.blockNetherWart);
 		blockGunpowder = new BlockMSB(BlockNames.blockGunpowder);
 		blockCarrot = new BlockMSB(BlockNames.blockCarrot);
 		blockArrow = new BlockMSB(BlockNames.blockArrow);
@@ -82,7 +83,6 @@ public class ModBlocks {
 		blockFlint = new BlockMSB(BlockNames.blockFlint);
 		blockBone = new BlockMSB(BlockNames.blockBone);
 		blockSugar = new BlockMSB(BlockNames.blockSugar);
-		blockNetherStar = new BlockMSB(BlockNames.blockNetherStar);
 		blockClay = new BlockMSB(BlockNames.blockClay);
 		blockString = new BlockMSB(BlockNames.blockString);
 		blockFeather = new BlockMSB(BlockNames.blockFeather);
@@ -102,23 +102,25 @@ public class ModBlocks {
 	}
 
 	public static void registerBlocks() {
-		registerBlock(blockCharcoal);
-		registerBlock(blockApple);
-		registerBlock(blockGoldApple, ItemBlockGoldApple.class);
-		registerBlock(blockBook);
-		registerBlock(blockEgg);
-		registerBlock(blockEnder, ItemBlockMultiMSB.class);
-		registerBlock(blockLead);
-		registerBlock(blockReed);
-		registerBlock(blockSeeds, ItemBlockMultiMSB.class);
-		registerBlock(blockStick);
-		registerBlock(blockLeather);
-		registerBlock(blockBucket);
-		registerBlock(blockDye, ItemBlockMultiMSB.class);
-		registerBlock(blockFireball);
-		registerBlock(blockSlimeball);
-		registerBlock(blockRottenFlesh);
-		registerBlock(blockPotato);
+		GameRegistry.registerBlock(blockCharcoal, BlockNames.blockCharcoal);
+		GameRegistry.registerBlock(blockApple, BlockNames.blockApple);
+		GameRegistry.registerBlock(blockGoldApple, ItemBlockGoldApple.class, BlockNames.blockGoldApple);
+		GameRegistry.registerBlock(blockBook, BlockNames.blockBook);
+		GameRegistry.registerBlock(blockEgg, BlockNames.blockEgg);
+		GameRegistry.registerBlock(blockEnder, ItemBlockEnder.class, BlockNames.blockEnder);
+		GameRegistry.registerBlock(blockLead, BlockNames.blockLead);
+		GameRegistry.registerBlock(blockReed, BlockNames.blockReed);
+		GameRegistry.registerBlock(blockSeeds, ItemBlockSeeds.class, BlockNames.blockSeeds);
+		GameRegistry.registerBlock(blockStick, BlockNames.blockStick);
+		GameRegistry.registerBlock(blockLeather, BlockNames.blockLeather);
+		GameRegistry.registerBlock(blockBucket, BlockNames.blockBucket);
+		GameRegistry.registerBlock(blockDye, ItemBlockDye.class, BlockNames.blockDye);
+		GameRegistry.registerBlock(blockFireball, BlockNames.blockFireball);
+		GameRegistry.registerBlock(blockSlimeball, BlockNames.blockSlimeball);
+		GameRegistry.registerBlock(blockRottenFlesh, BlockNames.blockRottenFlesh);
+		GameRegistry.registerBlock(blockPotato, BlockNames.blockPotato);
+		GameRegistry.registerBlock(blockNetherWart, B)
+
 		registerBlock(blockNetherWart);
 		registerBlock(blockGunpowder);
 		registerBlock(blockCarrot);
@@ -144,169 +146,5 @@ public class ModBlocks {
 		registerBlock(blockCompCobble, ItemBlockMultiMSB.class);
 		registerBlock(blockCompSand, ItemBlockMultiMSB.class);
 		registerBlock(blockCompGravel, ItemBlockMultiMSB.class);
-	}
-
-	public static void registerModels() {
-		register(blockCharcoal, 0, "blockCharcoal");
-		register(blockApple, 0, "blockApple");
-		register(blockGoldApple, 0, "blockGoldApple1");
-		register(blockGoldApple, 1, "blockGoldApple2");
-		register(blockBook, 0, "blockBook");
-		register(blockEgg, 0, "blockEgg");
-		register(blockEnder, 0, "blockEnderPearl");
-		register(blockEnder, 1, "blockEnderEye");
-		register(blockLead, 0, "blockLead");
-		register(blockReed, 0, "blockReed");
-		register(blockSeeds, 0, "blockWheatSeeds");
-		register(blockSeeds, 1, "blockPumpkinSeeds");
-		register(blockSeeds, 2, "blockMelonSeeds");
-		register(blockStick, 0, "blockStick");
-		register(blockLeather, 0, "blockLeather");
-		register(blockBucket, 0, "blockBucket");
-		register(blockDye, 0, "blockInkSack");
-		register(blockDye, 1, "blockRoseRed");
-		register(blockDye, 2, "blockCactusGreen");
-		register(blockDye, 3, "blockCocoa");
-		register(blockDye, 4, "blockPurpleDye");
-		register(blockDye, 5, "blockCyanDye");
-		register(blockDye, 6, "blockSilverDye");
-		register(blockDye, 7, "blockGrayDye");
-		register(blockDye, 8, "blockPinkDye");
-		register(blockDye, 9, "blockLimeDye");
-		register(blockDye, 10, "blockYellowDye");
-		register(blockDye, 11, "blockLightBlueDye");
-		register(blockDye, 12, "blockMagentaDye");
-		register(blockDye, 13, "blockOrangeDye");
-		register(blockDye, 14, "blockWhiteDye");
-		register(blockFireball, 0, "blockFireball");
-		register(blockSlimeball, 0, "blockSlimeball");
-		register(blockRottenFlesh, 0, "blockRottenFlesh");
-		register(blockPotato, 0, "blockPotato");
-		register(blockNetherWart, 0, "blockNetherWart");
-		register(blockGunpowder, 0, "blockGunpowder");
-		register(blockCarrot, 0, "blockCarrot");
-		register(blockArrow, 0, "blockArrow");
-		register(blockBlazeRod, 0, "blockBlazeRod");
-		register(blockFlint, 0, "blockFlint");
-		register(blockBone, 0, "blockBone");
-		register(blockSugar, 0, "blockSugar");
-		register(blockNetherStar, 0, "blockNetherStar");
-		register(blockClay, 0, "blockClay");
-		register(blockString, 0, "blockString");
-		register(blockFeather, 0, "blockFeather");
-		register(blockBread, 0, "blockBread");
-		register(blockPorkchop, 0, "blockRawPorkchop");
-		register(blockPorkchop, 1, "blockCookedPorkchop");
-		register(blockFish, 0, "blockRawFish");
-		register(blockFish, 1, "blockRawSalmon");
-		register(blockFish, 2, "blockClownfish");
-		register(blockFish, 3, "blockPufferfish");
-		register(blockFish, 4, "blockCookedFish");
-		register(blockFish, 5, "blockCookedSalmon");
-		register(blockCookie, 0, "blockCookie");
-		register(blockBeef, 0, "blockRawBeef");
-		register(blockBeef, 1, "blockCookedBeef");
-		register(blockPumpkinPie, 0, "blockPumpkinPie");
-		register(blockGhastTear, 0, "blockGhastTear");
-		register(blockSkull, 0, "blockSkullSkeleton");
-		register(blockSkull, 1, "blockSkullWither");
-		register(blockSkull, 2, "blockSkullZombie");
-		register(blockSkull, 3, "blockSkullCreeper");
-		register(blockMutton, 0, "blockRawMutton");
-		register(blockMutton, 1, "blockCookedMutton");
-		register(blockRabbit, 0, "blockRawRabbit");
-		register(blockRabbit, 1, "blockCookedRabbit");
-		for (int i = 0; i < 16; i++) {
-			register(blockCompCobble, i, "cobblestone");
-		}
-		for (int i = 0; i < 16; i++) {
-			register(blockCompSand, i, "sand");
-		}
-		for (int i = 0; i < 16; i++) {
-			register(blockCompGravel, i, "gravel");
-		}
-	}
-
-	public static void addVariants() {
-		add(blockCharcoal, "blockCharcoal");
-		add(blockApple, "blockApple");
-		add(blockGoldApple, "blockGoldApple1");
-		add(blockGoldApple, "blockGoldApple2");
-		add(blockBook, "blockBook");
-		add(blockEgg, "blockEgg");
-		add(blockEnder, "blockEnderPearl");
-		add(blockEnder, "blockEnderEye");
-		add(blockLead, "blockLead");
-		add(blockReed, "blockReed");
-		add(blockSeeds, "blockWheatSeeds");
-		add(blockSeeds, "blockPumpkinSeeds");
-		add(blockSeeds, "blockMelonSeeds");
-		add(blockStick, "blockStick");
-		add(blockLeather, "blockLeather");
-		add(blockBucket, "blockBucket");
-		add(blockDye, "blockInkSack");
-		add(blockDye, "blockRoseRed");
-		add(blockDye, "blockCactusGreen");
-		add(blockDye, "blockCocoa");
-		add(blockDye, "blockPurpleDye");
-		add(blockDye, "blockCyanDye");
-		add(blockDye, "blockSilverDye");
-		add(blockDye, "blockGrayDye");
-		add(blockDye, "blockPinkDye");
-		add(blockDye, "blockLimeDye");
-		add(blockDye, "blockYellowDye");
-		add(blockDye, "blockLightBlueDye");
-		add(blockDye, "blockMagentaDye");
-		add(blockDye, "blockOrangeDye");
-		add(blockDye, "blockWhiteDye");
-		add(blockFireball, "blockFireball");
-		add(blockSlimeball, "blockSlimeball");
-		add(blockRottenFlesh, "blockRottenFlesh");
-		add(blockPotato, "blockPotato");
-		add(blockNetherWart, "blockNetherWart");
-		add(blockGunpowder, "blockGunpowder");
-		add(blockCarrot, "blockCarrot");
-		add(blockArrow, "blockArrow");
-		add(blockBlazeRod, "blockBlazeRod");
-		add(blockFlint, "blockFlint");
-		add(blockBone, "blockBone");
-		add(blockSugar, "blockSugar");
-		add(blockNetherStar, "blockNetherStar");
-		add(blockClay, "blockClay");
-		add(blockString, "blockString");
-		add(blockFeather, "blockFeather");
-		add(blockBread, "blockBread");
-		add(blockPorkchop, "blockRawPorkchop");
-		add(blockPorkchop, "blockCookedPorkchop");
-		add(blockFish, "blockRawFish");
-		add(blockFish, "blockRawSalmon");
-		add(blockFish, "blockClownfish");
-		add(blockFish, "blockPufferfish");
-		add(blockFish, "blockCookedFish");
-		add(blockFish, "blockCookedSalmon");
-		add(blockCookie, "blockCookie");
-		add(blockBeef, "blockRawBeef");
-		add(blockBeef, "blockCookedBeef");
-		add(blockPumpkinPie, "blockPumpkinPie");
-		add(blockGhastTear, "blockGhastTear");
-		add(blockSkull, "blockSkullSkeleton");
-		add(blockSkull, "blockSkullWither");
-		add(blockSkull, "blockSkullZombie");
-		add(blockSkull, "blockSkullCreeper");
-		add(blockMutton, "blockRawMutton");
-		add(blockMutton, "blockCookedMutton");
-		add(blockRabbit, "blockRawRabbit");
-		add(blockRabbit, "blockCookedRabbit");
-		add(blockCompCobble, "cobblestone");
-		add(blockCompSand, "sand");
-		add(blockCompGravel, "gravel");
-	}
-
-	public static void register(Block block, int meta, String name) {
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), meta,new ModelResourceLocation("msb:" + name, "inventory"));
-	}
-	
-	public static void add(Block block, String name){
-		ModelBakery.addVariantName(Item.getItemFromBlock(block), name);
 	}
 }
