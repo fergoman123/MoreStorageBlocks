@@ -37,25 +37,27 @@ public class BlockDye extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockInkSack("blockInkSack"),
-        blockRoseRed("blockRoseRed"),
-        blockCactusGreen("blockCactusGreen"),
-        blockCocoa("blockCocoa"),
-        blockPurpleDye("blockPurpleDye"),
-        blockCyanDye("blockCyanDye"),
-        blockSilverDye("blockSilverDye"),
-        blockGrayDye("blockGrayDye"),
-        blockPinkDye("blockPinkDye"),
-        blockLimeDye("blockLimeDye"),
-        blockYellowDye("blockYellowDye"),
-        blockLightBlueDye("blockLightBlueDye"),
-        blockMagentaDye("blockMagentaDye"),
-        blockOrangeDye("blockOrangeDye"),
-        blockWhiteDye("blockWhiteDye");
+        blockInkSack(0, "blockInkSack"),
+        blockRoseRed(1, "blockRoseRed"),
+        blockCactusGreen(2, "blockCactusGreen"),
+        blockCocoa(3, "blockCocoa"),
+        blockPurpleDye(4, "blockPurpleDye"),
+        blockCyanDye(5, "blockCyanDye"),
+        blockSilverDye(6, "blockSilverDye"),
+        blockGrayDye(7, "blockGrayDye"),
+        blockPinkDye(8, "blockPinkDye"),
+        blockLimeDye(9, "blockLimeDye"),
+        blockYellowDye(10, "blockYellowDye"),
+        blockLightBlueDye(11, "blockLightBlueDye"),
+        blockMagentaDye(12, "blockMagentaDye"),
+        blockOrangeDye(13, "blockOrangeDye"),
+        blockWhiteDye(14, "blockWhiteDye");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -71,8 +73,12 @@ public class BlockDye extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockDye, amt, ordinal());
+            return new ItemStack(ModBlocks.blockDye, amt, this.meta);
         }
     }
 }

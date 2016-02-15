@@ -36,12 +36,14 @@ public class BlockMutton extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockRawMutton("blockRawMutton"),
-        blockCookedMutton("blockCookedMutton");
+        blockRawMutton(0, "blockRawMutton"),
+        blockCookedMutton(1, "blockCookedMutton");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -57,8 +59,12 @@ public class BlockMutton extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockMutton, amt, ordinal());
+            return new ItemStack(ModBlocks.blockMutton, amt, this.meta);
         }
     }
 }

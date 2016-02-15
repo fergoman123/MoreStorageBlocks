@@ -37,12 +37,14 @@ public class BlockPorkchop extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockRawPorkchop("blockRawPorkchop"),
-        blockCookedPorkchop("blockCookedPorkchop");
+        blockRawPorkchop(0, "blockRawPorkchop"),
+        blockCookedPorkchop(1, "blockCookedPorkchop");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -58,8 +60,12 @@ public class BlockPorkchop extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockPorkchop, amt, ordinal());
+            return new ItemStack(ModBlocks.blockPorkchop, amt, this.meta);
         }
     }
 }

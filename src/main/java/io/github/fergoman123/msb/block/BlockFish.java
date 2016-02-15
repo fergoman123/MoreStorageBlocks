@@ -36,16 +36,18 @@ public class BlockFish extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockRawFish("blockRawFish"),
-        blockRawSalmon("blockRawSalmon"),
-        blockClownfish("blockClownfish"),
-        blockPufferfish("blockPufferfish"),
-        blockCookedFish("blockCookedFish"),
-        blockCookedSalmon("blockCookedSalmon");
+        blockRawFish(0, "blockRawFish"),
+        blockRawSalmon(1, "blockRawSalmon"),
+        blockClownfish(2, "blockClownfish"),
+        blockPufferfish(3, "blockPufferfish"),
+        blockCookedFish(4, "blockCookedFish"),
+        blockCookedSalmon(5, "blockCookedSalmon");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -62,8 +64,12 @@ public class BlockFish extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockFish, amt, ordinal());
+            return new ItemStack(ModBlocks.blockFish, amt, this.meta);
         }
     }
 }

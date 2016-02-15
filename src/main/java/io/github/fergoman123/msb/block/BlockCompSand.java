@@ -42,26 +42,28 @@ public class BlockCompSand extends BlockMultiMSB {
 
     public enum EnumType implements IStringSerializable {
 
-        blockCompSand1("blockCompSand1"),
-        blockCompSand2("blockCompSand2"),
-        blockCompSand3("blockCompSand3"),
-        blockCompSand4("blockCompSand4"),
-        blockCompSand5("blockCompSand5"),
-        blockCompSand6("blockCompSand6"),
-        blockCompSand7("blockCompSand7"),
-        blockCompSand8("blockCompSand8"),
-        blockCompSand9("blockCompSand9"),
-        blockCompSand10("blockCompSand10"),
-        blockCompSand11("blockCompSand11"),
-        blockCompSand12("blockCompSand12"),
-        blockCompSand13("blockCompSand13"),
-        blockCompSand14("blockCompSand14"),
-        blockCompSand15("blockCompSand15"),
-        blockCompSand16("blockCompSand16");
+        blockCompSand1(0, "blockCompSand1"),
+        blockCompSand2(1, "blockCompSand2"),
+        blockCompSand3(2, "blockCompSand3"),
+        blockCompSand4(3, "blockCompSand4"),
+        blockCompSand5(4, "blockCompSand5"),
+        blockCompSand6(5, "blockCompSand6"),
+        blockCompSand7(6, "blockCompSand7"),
+        blockCompSand8(7, "blockCompSand8"),
+        blockCompSand9(8, "blockCompSand9"),
+        blockCompSand10(9, "blockCompSand10"),
+        blockCompSand11(10, "blockCompSand11"),
+        blockCompSand12(11, "blockCompSand12"),
+        blockCompSand13(12, "blockCompSand13"),
+        blockCompSand14(13, "blockCompSand14"),
+        blockCompSand15(14, "blockCompSand15"),
+        blockCompSand16(15, "blockCompSand16");
 
-        public String name;
+        private int meta;
+        private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -78,8 +80,12 @@ public class BlockCompSand extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockCompSand, amt, ordinal());
+            return new ItemStack(ModBlocks.blockCompSand, amt, this.meta);
         }
     }
 }

@@ -36,13 +36,15 @@ public class BlockSeeds extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockWheatSeeds("blockWheatSeeds"),
-        blockPumpkinSeeds("blockPumpkinSeeds"),
-        blockMelonSeeds("blockMelonSeeds");
+        blockWheatSeeds(0, "blockWheatSeeds"),
+        blockPumpkinSeeds(1, "blockPumpkinSeeds"),
+        blockMelonSeeds(2, "blockMelonSeeds");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -58,8 +60,12 @@ public class BlockSeeds extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockSeeds, amt, ordinal());
+            return new ItemStack(ModBlocks.blockSeeds, amt, this.meta);
         }
     }
 }

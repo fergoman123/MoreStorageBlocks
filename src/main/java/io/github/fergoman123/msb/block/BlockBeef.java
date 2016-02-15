@@ -36,12 +36,15 @@ public class BlockBeef extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockRawBeef("blockRawBeef"),
-        blockCookedBeef("blockCookedBeef");
+        blockRawBeef(0, "blockRawBeef"),
+        blockCookedBeef(1, "blockCookedBeef");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -58,8 +61,12 @@ public class BlockBeef extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockBeef, amt, ordinal());
+            return new ItemStack(ModBlocks.blockBeef, amt, this.meta);
         }
     }
 }

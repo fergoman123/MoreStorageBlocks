@@ -36,12 +36,14 @@ public class BlockRabbit extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockRawRabbit("blockRawRabbit"),
-        blockCookedRabbit("blockCookedRabbit");
+        blockRawRabbit(0, "blockRawRabbit"),
+        blockCookedRabbit(1, "blockCookedRabbit");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -57,8 +59,12 @@ public class BlockRabbit extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockRabbit, amt, ordinal());
+            return new ItemStack(ModBlocks.blockRabbit, amt, this.meta);
         }
     }
 }

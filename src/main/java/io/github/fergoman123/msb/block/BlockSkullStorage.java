@@ -36,14 +36,16 @@ public class BlockSkullStorage extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockSkullSkeleton("blockSkullSkeleton"),
-        blockSkullWither("blockSkullWither"),
-        blockSkullZombie("blockSkullZombie"),
-        blockSkullCreeper("blockSkullCreeper");
+        blockSkullSkeleton(0, "blockSkullSkeleton"),
+        blockSkullWither(1, "blockSkullWither"),
+        blockSkullZombie(2, "blockSkullZombie"),
+        blockSkullCreeper(3, "blockSkullCreeper");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -59,8 +61,12 @@ public class BlockSkullStorage extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockSkull, amt, ordinal());
+            return new ItemStack(ModBlocks.blockSkull, amt, this.meta);
         }
     }
 }

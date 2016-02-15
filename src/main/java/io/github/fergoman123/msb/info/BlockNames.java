@@ -18,7 +18,7 @@ public class BlockNames {
     public static final String blockSlimeball = "blockSlimeball";
     public static final String blockRottenFlesh = "blockRottenFlesh";
     public static final String blockPotato = "blockPotato";
-    public static final String blockNetherWart = "blockNetherWart";
+    public static final String blockNether = "blockNether";
     public static final String blockGunpowder = "blockGunpowder";
     public static final String blockCarrot = "blockCarrot";
     public static final String blockArrow = "blockArrow";
@@ -26,7 +26,6 @@ public class BlockNames {
     public static final String blockFlint = "blockFlint";
     public static final String blockBone = "blockBone";
     public static final String blockSugar = "blockSugar";
-    public static final String blockNetherStar = "blockNetherStar";
     public static final String blockClay = "blockClay";
     public static final String blockString = "blockString";
     public static final String blockFeather = "blockFeather";

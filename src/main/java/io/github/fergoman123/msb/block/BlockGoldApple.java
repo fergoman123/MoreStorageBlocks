@@ -37,12 +37,14 @@ public class BlockGoldApple extends BlockMultiMSB {
     }
 
     public enum EnumType implements IStringSerializable {
-        blockGoldApple1("blockGoldApple1"),
-        blockGoldApple2("blockGoldApple2");
+        blockGoldApple1(0, "blockGoldApple1"),
+        blockGoldApple2(1, "blockGoldApple2");
 
+        private int meta;
         private String name;
 
-        EnumType(String name) {
+        EnumType(int meta, String name) {
+            this.meta = meta;
             this.name = name;
         }
 
@@ -58,8 +60,12 @@ public class BlockGoldApple extends BlockMultiMSB {
             return names;
         }
 
+        public int meta(){
+            return this.meta;
+        }
+
         public ItemStack getItemStack(int amt) {
-            return new ItemStack(ModBlocks.blockGoldApple, amt, ordinal());
+            return new ItemStack(ModBlocks.blockGoldApple, amt, this.meta);
         }
     }
 }
