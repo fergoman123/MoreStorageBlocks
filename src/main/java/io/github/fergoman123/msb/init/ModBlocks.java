@@ -5,6 +5,7 @@ import io.github.fergoman123.msb.block.*;
 import io.github.fergoman123.msb.info.BlockNames;
 import io.github.fergoman123.msb.item.ItemBlockMultiMSB;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -139,87 +140,18 @@ public class ModBlocks {
         GameRegistry.registerBlock(blockCompSand, ItemBlockMultiMSB.class, BlockNames.blockCompSand);
         GameRegistry.registerBlock(blockCompGravel, ItemBlockMultiMSB.class, BlockNames.blockCompGravel);
 
-        register(blockCharcoal, BlockNames.blockCharcoal);
         register(blockApple, BlockNames.blockApple);
-        for(int i = 0; i < BlockGoldApple.EnumType.getNames().length; i++){
-            register(blockGoldApple, i, BlockGoldApple.EnumType.getNames()[i]);
-        }
-        register(blockBook, BlockNames.blockBook);
-        register(blockEgg, BlockNames.blockEgg);
-        for (int i = 0; i < BlockEnder.EnumType.values().length; i++) {
-            register(blockEnder, i, BlockEnder.EnumType.getNames()[i]);
-        }
-        register(blockLead, BlockNames.blockLead);
-        register(blockReed, BlockNames.blockReed);
-        for (int i = 0; i < BlockSeeds.EnumType.getNames().length; i++) {
-            register(blockSeeds, i, BlockSeeds.EnumType.getNames()[i]);
-        }
-        register(blockStick, BlockNames.blockStick);
-        register(blockLeather, BlockNames.blockLeather);
-        register(blockBucket, BlockNames.blockBucket);
-        for (int i = 0; i < BlockDye.EnumType.getNames().length; i++) {
-            register(blockDye, i, BlockDye.EnumType.getNames()[i]);
-        }
-        register(blockFireball, BlockNames.blockFireball);
-        register(blockSlimeball, BlockNames.blockSlimeball);
-        register(blockRottenFlesh, BlockNames.blockRottenFlesh);
-        register(blockPotato, BlockNames.blockPotato);
-        for (int i = 0; i < BlockNether.EnumType.getNames().length; i++) {
-            register(blockNether, i, BlockNether.EnumType.getNames()[i]);
-        }
-        register(blockGunpowder, BlockNames.blockGunpowder);
-        register(blockCarrot, BlockNames.blockCarrot);
-        register(blockArrow, BlockNames.blockArrow);
-        register(blockBlazeRod, BlockNames.blockBlazeRod);
-        register(blockFlint, BlockNames.blockFlint);
-        register(blockBone, BlockNames.blockBone);
-        register(blockSugar, BlockNames.blockSugar);
-        register(blockClay, BlockNames.blockClay);
-        register(blockString, BlockNames.blockString);
-        register(blockFeather, BlockNames.blockFeather);
-        register(blockBread, BlockNames.blockBread);
-        for (int i = 0; i < BlockPorkchop.EnumType.getNames().length; i++) {
-            register(blockPorkchop, i, BlockPorkchop.EnumType.getNames()[i]);
-        }
-        for (int i = 0; i < BlockFish.EnumType.getNames().length; i++) {
-            register(blockFish, i, BlockFish.EnumType.getNames()[i]);
-        }
-        register(blockCookie, BlockNames.blockCookie);
-        for (int i = 0; i < BlockBeef.EnumType.getNames().length; i++) {
-            register(blockBeef, i, BlockBeef.EnumType.getNames()[i]);
-        }
-        register(blockPumpkinPie, BlockNames.blockPumpkinPie);
-        register(blockGhastTear, BlockNames.blockGhastTear);
-        for (int i = 0; i < BlockSkullStorage.EnumType.getNames().length; i++) {
-            register(blockSkull, i, BlockSkullStorage.EnumType.getNames()[i]);
-        }
-
-        for (int i = 0; i < BlockMutton.EnumType.getNames().length; i++) {
-            register(blockMutton, i, BlockMutton.EnumType.getNames()[i]);
-        }
-        for (int i = 0; i < BlockRabbit.EnumType.getNames().length; i++) {
-            register(blockRabbit, i, BlockRabbit.EnumType.getNames()[i]);
-        }
-        for (int i = 0; i < BlockCompCobble.EnumType.getNames().length; i++){
-            register(blockCompCobble, i, BlockCompCobble.EnumType.getNames()[i]);
-        }
-        for (int i = 0; i < BlockCompSand.EnumType.getNames().length; i++) {
-            register(blockCompSand, i, BlockCompSand.EnumType.getNames()[i]);
-        }
-        for (int i = 0; i < BlockCompGravel.EnumType.getNames().length; i++) {
-            register(blockCompGravel, i, BlockCompGravel.EnumType.getNames()[i]);
-        }
+        register(blockCharcoal, BlockNames.blockCharcoal);
+        registerBlockGoldApple(BlockGoldApple.EnumType.blockGoldApple1);
+        registerBlockGoldApple(BlockGoldApple.EnumType.blockGoldApple2);
     }
 
-    public static void register(Block block, int meta, String name) {
-        ModelHelper.register(block, meta, new ModelResourceLocation("msb:" + name, "inventory"));
+    private static void register(Block block, String name){
+        ModelHelper.register(block, new ModelResourceLocation("msb:" + name, "inventory"));
     }
 
-    public static void register(Block block, String name){
-        ModelHelper.register(block, 0, new ModelResourceLocation("msb:" + name, "inventory"));
-    }
-
-    public static void variant(Block block, String name){
-        ModelHelper.variant(block, new ResourceLocation("msb:" + name));
+    private static void registerBlockGoldApple(BlockGoldApple.EnumType type){
+        ModelHelper.register(blockGoldApple, type.meta(), new ModelResourceLocation("msb:" + type.getName(), "inventory"));
+        ModelHelper.variant(blockGoldApple, new ResourceLocation("msb:" + type.getName()));
     }
 }
